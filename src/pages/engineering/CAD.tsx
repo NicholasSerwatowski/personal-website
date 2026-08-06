@@ -1,13 +1,13 @@
 // Change file as needed
-function Engineering() {
+function CAD() {
   return (
     <div className="section">
-      <h1>Engineering</h1>
+      <h1>CAD</h1>
       <p>
-        Engineering
+        CAD
       </p>
     </div>
   );
 }
 
-export default Engineering;
+export default CAD;

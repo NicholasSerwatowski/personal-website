@@ -1,13 +1,13 @@
 // Change file as needed
-function Engineering() {
+function CaseWind() {
   return (
     <div className="section">
-      <h1>Engineering</h1>
+      <h1>CaseWind</h1>
       <p>
-        Engineering
+        CaseWind
       </p>
     </div>
   );
 }
 
-export default Engineering;
+export default CaseWind;

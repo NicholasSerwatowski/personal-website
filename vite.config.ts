@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
-  base: "/test/", // test = Repo name
+  base: "", // The page that is first seen when opening the website
 
   plugins: [
     react(),

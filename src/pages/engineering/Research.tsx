@@ -1,13 +1,13 @@
 // Change file as needed
-function Engineering() {
+function Research() {
   return (
     <div className="section">
-      <h1>Engineering</h1>
+      <h1>Research</h1>
       <p>
-        Engineering
+        Research
       </p>
     </div>
   );
 }
 
-export default Engineering;
+export default Research;
