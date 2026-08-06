@@ -1,6 +1,8 @@
 // Change file as needed
 // This imports the profile image for the home page
 import profileImage from "../assets/ProfessionalCloseUp.jpg";
+import resumePreview from "../assets/Nicholas_Serwatowski_Resume.png";
+import resumePDF from "../assets/Nicholas_Serwatowski_Resume.pdf";
 
 // This represents the skills, projects, and highlights for the home page
 const skills = [
@@ -171,7 +173,35 @@ function Home() {
             ))}
           </div>
         </section>
-          
+
+        {/* This is the resume section of the home page */}
+        <section className="section resume-section">
+          <div className="section-heading">
+            <p className="eyebrow">Resume</p>
+            <h2>
+              A snapshot of my engineering experience and skills.
+            </h2>
+          </div>
+
+          <div className="resume-card">
+            <img
+              src={resumePreview}
+              alt="Nicholas Serwatowski Resume Preview"
+              className="resume-preview"
+            />
+
+            <div className="resume-actions">
+              <a
+                className="button button-primary"
+                href={resumePDF}
+                download
+              >
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* This is the contact section of the home page */}
         <section className="section contact-section">
           <div className="section-heading">

@@ -307,3 +307,25 @@
   visibility: visible;
   transform: translateY(0);
 }
+
+/* Resume Card Styles */
+.resume-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Resume Preview Styles */
+.resume-preview {
+  width: 650px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Resume Actions Styles */
+.resume-actions {
+  display: flex;
+  justify-content: center;
+}
