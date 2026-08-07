@@ -1,15 +1,39 @@
 // Change file as needed
-// This is the interests page
+import PageNavigation from "../components/PageNavigation";
+
 function Interests() {
   return (
-    <div className="section">
+    <section className="section">
       <h1>Interests</h1>
+
       <p>
-        Photography, books, travel,
-        music, learning, and anything
-        else that makes you you.
+        Interests
       </p>
-    </div>
+
+      <PageNavigation
+        links={[
+          {
+            title: "Photography",
+            path: "/interests/photography",
+          },
+          {
+            title: "Books",
+            path: "/interests/books",
+          },
+          {
+            title: "Learning",
+            path: "/interests/learning",
+          },
+          {
+            title: "Music",
+            path: "/interests/music",
+          },
+          {
+            title: "Travel",
+            path: "/interests/travel",}
+        ]}
+      />
+    </section>
   );
 }
 

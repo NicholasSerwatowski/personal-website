@@ -1,12 +1,32 @@
 // Change file as needed
+import PageNavigation from "../components/PageNavigation";
+
 function Engineering() {
   return (
-    <div className="section">
+    <section className="section">
       <h1>Engineering</h1>
+
       <p>
-        Engineering
+        A collection of my engineering projects and technical work.
       </p>
-    </div>
+
+      <PageNavigation
+        links={[
+          {
+            title: "Combat Robotics",
+            path: "/engineering/combatrobotics",
+          },
+          {
+            title: "Case Wind",
+            path: "/engineering/casewind",
+          },
+          {
+            title: "CAD",
+            path: "/engineering/cad",
+          },
+        ]}
+      />
+    </section>
   );
 }
 

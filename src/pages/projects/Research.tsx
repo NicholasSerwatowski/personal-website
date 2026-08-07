@@ -1,4 +1,3 @@
-// Change file as needed
 function Research() {
   return (
     <div className="section">

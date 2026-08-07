@@ -30,18 +30,6 @@ function Navbar() {
             >
               {item.title}
             </NavLink>
-            {item.children && (
-              <div className="dropdown">
-                {item.children.map(child => (
-                  <NavLink
-                    key={child.title}
-                    to={child.path}
-                  >
-                    {child.title}
-                  </NavLink>
-                ))}
-              </div>
-            )}
           </div>
         ))}
 

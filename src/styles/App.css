@@ -1,3 +1,8 @@
+/* Change as needed */
+body {
+  background: white !important;
+}
+
 .app-shell {
   min-height: 100vh;
   color: var(--text);
@@ -7,13 +12,6 @@
   padding: 120px 40px 80px;
   background: linear-gradient(135deg, #0f172a 0%, #111827 40%, #1d4ed8 100%);
   color: white;
-}
-
-.top-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 18px;
-  margin-bottom: 32px;
 }
 
 .top-nav a {
@@ -92,6 +90,23 @@
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+.page-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.page-navigation .button-secondary {
+  background: #1d4ed8;
+  color: white;
+  border: 1px solid #1d4ed8;
+}
+
+.page-navigation .button-secondary:hover {
+  background: #2563eb;
+}
+
 .hero-stats {
   list-style: none;
   display: grid;
@@ -144,10 +159,11 @@
   gap: 10px;
 }
 
+/* Section styles, important in home tab */
 .section {
   max-width: 1200px;
   margin: auto;
-  padding: 110px 40px;
+  padding: 60px 40px;
 }
 
 .section-heading {
@@ -280,32 +296,6 @@
   color: white;
   cursor: pointer;
   font: inherit;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  min-width: 220px;
-
-  background: white;
-
-  border-radius: 14px;
-
-  opacity: 0;
-
-  visibility: hidden;
-
-  transform: translateY(12px);
-
-  transition: 0.3s;
-}
-
-.nav-item:hover .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
 }
 
 /* Resume Card Styles */

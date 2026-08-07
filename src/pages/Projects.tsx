@@ -1,13 +1,35 @@
 // Change file as needed
+import PageNavigation from "../components/PageNavigation";
+
 function Projects() {
   return (
-    <div className="section">
+    <section className="section">
       <h1>Projects</h1>
+
       <p>
-        This page will eventually showcase all of your software,
-        hardware, research, and personal projects.
+        Projects
       </p>
-    </div>
+
+      <PageNavigation
+        links={[
+          {
+            title: "Archive",
+            path: "/projects/archive",
+          },
+          {
+            title: "Featured",
+            path: "/projects/featured",
+          },
+          {
+            title: "Personal",
+            path: "/projects/personal",
+          },
+          {
+            title: "Research",
+            path: "/projects/research",}
+        ]}
+      />
+    </section>
   );
 }
 

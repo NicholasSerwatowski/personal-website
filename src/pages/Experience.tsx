@@ -1,14 +1,36 @@
 // Change file as needed
+import PageNavigation from "../components/PageNavigation";
+
 function Experience() {
   return (
-    <div className="section">
+    <section className="section">
       <h1>Experience</h1>
+
       <p>
-        This page will contain your work history,
-        education, leadership, research,
-        organizations, and awards.
+        Experience
       </p>
-    </div>
+
+      <PageNavigation
+        links={[
+          {
+            title: "Awards",
+            path: "/experience/awards",
+          },
+          {
+            title: "Education",
+            path: "/experience/education",
+          },
+          {
+            title: "Leadership",
+            path: "/experience/leadership",
+          },
+          {
+            title: "Work",
+            path: "/experience/work",
+          }
+        ]}
+      />
+    </section>
   );
 }
 
