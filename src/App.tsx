@@ -16,6 +16,7 @@ import Projects from "./pages/Projects";
   import Research from "./pages/projects/Research";
 import Experience from "./pages/Experience";
   import Education from "./pages/experience/Education";
+    import CWRU from "./pages/experience/education/CWRU";
   import Work from "./pages/experience/Work";
   import Leadership from "./pages/experience/Leadership";
   import Awards from "./pages/experience/Awards";
@@ -31,7 +32,6 @@ import Contact from "./pages/Contact";
 // This provides the global styles
 import "./styles/app.css";
 import "./styles/pages.css";
-import CWRU from "./pages/experience/education/CWRU";
 
 // This is the main app
 function App() {

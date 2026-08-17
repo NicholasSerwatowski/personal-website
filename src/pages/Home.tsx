@@ -3,15 +3,53 @@
 import profileImage from "../assets/ProfessionalCloseUp.jpg";
 import resumePreview from "../assets/Nicholas_Serwatowski_Resume.png";
 import resumePDF from "../assets/Nicholas_Serwatowski_Resume.pdf";
+import cwruImage from "../assets/cwru.jpg";
+import HighlightCarousel from "../components/HighlightCarousel";
+import SkillsTabs from "../components/SkillsTabs";
 
 // This represents the skills, projects, and highlights for the home page
-const skills = [
-  "React",
-  "TypeScript",
-  "Node.js",
-  "UI Engineering",
-  "Design Systems",
-  "Problem Solving",
+const skillCategories = [
+  {
+    name: "Engineering",
+    skills: [
+      "CAD",
+      "Mechanical Design",
+      "Prototyping",
+      "Manufacturing",
+      "Testing",
+      "Troubleshooting",
+    ],
+  },
+  {
+    name: "Programming",
+    skills: [
+      "Python",
+      "C++",
+      "JavaScript",
+      "TypeScript",
+      "React",
+    ],
+  },
+  {
+    name: "Software",
+    skills: [
+      "SolidWorks",
+      "MATLAB",
+      "Git",
+      "VS Code",
+      "Microsoft Excel",
+    ],
+  },
+  {
+    name: "Soft Skills",
+    skills: [
+      "Problem Solving",
+      "Teamwork",
+      "Communication",
+      "Leadership",
+      "Technical Writing",
+    ],
+  },
 ];
 
 // This represents the projects for the home page
@@ -39,15 +77,25 @@ const projects = [
   },
 ];
 
-// This represents the highlights for the home page
 const highlights = [
-  // One highlight
-  "Built user-focused products with clean, maintainable code.",
-  // One highlight
-  "Comfortable turning ideas into polished interfaces and experiences.",
-  // One highlight
-  "Strong communicator who enjoys collaboration and fast iteration.",
-  // Add more by following the same format within the brackets
+  {
+    title: "Combat Robotics",
+    description:
+      "Designing and competing with CWRUBotix, a collegiate combat robotics team.",
+    image: cwruImage,
+  },
+  {
+    title: "Case Wind",
+    description:
+      "Working with Case Wind to design and develop a wind turbine for the DOE Collegiate Wind Competition.",
+    image: cwruImage,
+  },
+  {
+    title: "Music",
+    description:
+      "A lifelong interest in music that first sparked my fascination with patterns.",
+    image: cwruImage,
+  },
 ];
 
 // This is the home page
@@ -72,8 +120,6 @@ function Home() {
             {/* This is the hero description for the home page */}
             <p className="hero-description">
                 Mechanical and Aerospace Engineering student.
-                Aspiring engineer.
-                Curious about difficult problems.
             </p>
         </div>
 
@@ -94,21 +140,47 @@ function Home() {
           <div className="section-heading">
             <p className="eyebrow">About Me</p>
             <h2>
-              I'm driven by solving practical problems with elegant solutions.
+              I'm driven by solving practical problems with innovative solutions.
             </h2>
           </div>
           <div className="about-grid">
             <p>
-              I care about building products that feel polished, useful, and
-              easy to trust. Whether I'm refining a user flow, writing reliable
-              front-end code, or collaborating with a team, I focus on the
-              details that turn a good idea into something people remember.
+              I'm a Mechanical & Aerospace Engineering student at Case Western Reserve University, 
+              and I care about building things that are useful, well-designed, and worth trusting. 
+              What motivates me most is the process of taking something I don't understand, 
+              breaking it down, and figuring out how it works. I tend to see the world as one 
+              big problem to solve, and I genuinely enjoy looking for the patterns and principles 
+              that make it all make sense. 
+              <br /><br />
+              I grew up in Papillion, Nebraska, where I first became 
+              interested in patterns through music and brain puzzles. I started playing violin before 
+              moving to piano, which eventually led me into percussion and a variety of band activities 
+              throughout school. Music was probably my first real introduction to recognizing patterns 
+              and relationships. The more I played, the more I started noticing those same ideas in 
+              mathematics. I became fascinated by the way mathematical patterns could show up in things 
+              that seemed completely unrelated. 
+              <br /><br />
+              That curiosity eventually led me to math and physics. 
+              I liked that they gave me a way to describe and understand the world around me. But I didn't 
+              just want to understand how things worked on paper—I wanted to do something with that 
+              understanding. I became fascinated by the idea of using those principles to design, build, 
+              test, and improve something in the real world. That is what ultimately drew me to mechanical 
+              and aerospace engineering. 
+              <br /><br />
+              Today, I get to pursue that interest through my coursework and 
+              hands-on projects at Case Western. Whether I'm designing and building a combat robot with CWRUbotix, 
+              working on a wind turbine through Case Wind, or simply taking something apart to understand it, 
+              I enjoy the same process: understand the problem, find the patterns, build a solution, and see if it 
+              actually works. 
+              <br /><br />
+              Outside of engineering, I still find myself drawn to the same things that started this whole 
+              journey—music, puzzles, learning, and anything that gives me an excuse to figure out how something works.
             </p>
             <div className="info-card">
               <h3>Now looking for</h3>
               <p>
-                Opportunities where I can contribute as a thoughtful developer,
-                grow in a strong team, and help build products that matter.
+                Internship and research opportunities where I can develop my skills in
+                mechanical and aerospace engineering, while contributing to meaningful projects.
               </p>
             </div>
           </div>
@@ -119,34 +191,22 @@ function Home() {
           <div className="section-heading">
             <p className="eyebrow">Skills</p>
             <h2>
-              Core strengths that support modern product development.
+              Core strengths that support modern engineering and product development.
             </h2>
           </div>
-          <div className="pill-list">
-            {skills.map((skill) => (
-              <span className="pill" key={skill}>
-                {skill}
-              </span>
-            ))}
-          </div>
+
+          <SkillsTabs categories={skillCategories} />
         </section>
 
         {/* This is the highlights section of the home page */}
         <section className="section">
           <div className="section-heading">
             <p className="eyebrow">Highlights</p>
-            <h2>
-              A few things that define how I approach engineering.
-            </h2>
+            <h2>Experiences in my life I'm proud of</h2>
           </div>
-          <div className="card-grid">
-            {highlights.map((highlight) => (
-              <article className="project-card" key={highlight}>
-                <p>{highlight}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+
+  <HighlightCarousel highlights={highlights} />
+</section>
 
         {/* This is the projects section of the home page */}
         <section className="section">
@@ -213,8 +273,9 @@ function Home() {
           </div>
           <div className="contact-card">
             <p>
-              I'm open to full-time, freelance, and collaborative
-              opportunities. I'd love to hear from you.
+              I'm looking for internship and research opportunities where I can 
+              develop my skills in mechanical and aerospace engineering, 
+              while contributing to meaningful projects.
             </p>
             <div className="hero-actions">
               {/* This is the email button for the home page */}
