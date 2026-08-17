@@ -1,1 +1,1 @@
-{"name":"My Tab App","short_name":"Tabs","start_url":"/test/","display":"standalone","background_color":"#ffffff","theme_color":"#000000","lang":"en","scope":"/test/","icons":[{"src":"/icon.png","sizes":"192x192","type":"image/png"}]}
+{"name":"My Tab App","short_name":"Tabs","start_url":"/personal-website/","display":"standalone","background_color":"#ffffff","theme_color":"#000000","lang":"en","scope":"/personal-website/","icons":[{"src":"/icon.png","sizes":"192x192","type":"image/png"}]}
