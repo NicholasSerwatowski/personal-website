@@ -11,37 +11,37 @@ export const navigation: NavigationItem[] = [
   // This is the about page
   {
     title: "About",
-    path: "/about",
+    path: "/personal-website/about",
   },
 
   // This is the engineering page
   {
     title: "Engineering",
-    path: "/engineering",
+    path: "/personal-website/engineering",
   },
 
   // This is the projects page
   {
     title: "Projects",
-    path: "/projects",
+    path: "/personal-website/projects",
   },
 
   // This is the experience page
   {
     title: "Experience",
-    path: "/experience",
+    path: "/personal-website/experience",
   },
 
   // This is the interests page
   {
     title: "Interests",
-    path: "/interests",
+    path: "/personal-website/interests",
   },
 
   // This is the contact page
   {
     title: "Contact",
-    path: "/contact",
+    path: "/personal-website/contact",
   },
 
 ];

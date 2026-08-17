@@ -30,6 +30,8 @@ import Contact from "./pages/Contact";
 
 // This provides the global styles
 import "./styles/app.css";
+import "./styles/pages.css";
+import CWRU from "./pages/experience/education/CWRU";
 
 // This is the main app
 function App() {
@@ -41,45 +43,47 @@ function App() {
       <Routes>
 
         {/* This is the home page */}
-        <Route path="/" element={<Home />} />
+        <Route path="/personal-website" element={<Home />} />
 
         {/* This is the about page */}
-        <Route path="/about" element={<About />} />
+        <Route path="/personal-website/about" element={<About />} />
 
         {/* This is the engineering page with sub-routes for different engineering topics */}
-        <Route path="/engineering" element={<Engineering />} />
+        <Route path="/personal-website/engineering" element={<Engineering />} />
           {/* These are the sub-pages for the engineering topics */}
-          <Route path="/engineering/combatrobotics" element={<CombatRobotics />} />
-          <Route path="/engineering/casewind" element={<CaseWind />} />
-          <Route path="/engineering/cad" element={<CAD />} />
+          <Route path="/personal-website/engineering/combatrobotics" element={<CombatRobotics />} />
+          <Route path="/personal-website/engineering/casewind" element={<CaseWind />} />
+          <Route path="/personal-website/engineering/cad" element={<CAD />} />
 
         {/* This is the projects page */}
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/personal-website/projects" element={<Projects />} />
         {/* This is the projects sub-pages */}
-          <Route path="/projects/featured" element={<Featured />} />
-          <Route path="/projects/personal" element={<Personal />} />
-          <Route path="/projects/research" element={<Research />} />
-          <Route path="/projects/archive" element={<Archive />} />
+          <Route path="/personal-website/projects/featured" element={<Featured />} />
+          <Route path="/personal-website/projects/personal" element={<Personal />} />
+          <Route path="/personal-website/projects/research" element={<Research />} />
+          <Route path="/personal-website/projects/archive" element={<Archive />} />
 
         {/* This is the experience page */}
-        <Route path="/experience" element={<Experience />} />
+        <Route path="/personal-website/experience" element={<Experience />} />
           {/* These are the sub-pages for the experience topics */}
-          <Route path="/experience/education" element={<Education />} />
-          <Route path="/experience/work" element={<Work />} />
-          <Route path="/experience/leadership" element={<Leadership />} />
-          <Route path="/experience/awards" element={<Awards />} />
+          <Route path="/personal-website/experience/education" element={<Education />} />
+            <Route path="/personal-website/experience/education/cwru" element={<CWRU />} />
+
+          <Route path="/personal-website/experience/work" element={<Work />} />
+          <Route path="/personal-website/experience/leadership" element={<Leadership />} />
+          <Route path="/personal-website/experience/awards" element={<Awards />} />
 
         {/* This is the interests page */}
-        <Route path="/interests" element={<Interests />} />
+        <Route path="/personal-website/interests" element={<Interests />} />
           {/* These are the sub-pages for the interests topics */}
-          <Route path="/interests/music" element={<Music />} />
-          <Route path="/interests/photography" element={<Photography />} />
-          <Route path="/interests/travel" element={<Travel />} />
-          <Route path="/interests/books" element={<Books />} />
-          <Route path="/interests/learning" element={<Learning />} />
+          <Route path="/personal-website/interests/music" element={<Music />} />
+          <Route path="/personal-website/interests/photography" element={<Photography />} />
+          <Route path="/personal-website/interests/travel" element={<Travel />} />
+          <Route path="/personal-website/interests/books" element={<Books />} />
+          <Route path="/personal-website/interests/learning" element={<Learning />} />
 
         {/* This is the contact page */}
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/personal-website/contact" element={<Contact />} />
 
       </Routes>
 

@@ -7,7 +7,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <header className="navbar">
-      <Link className="logo" to="/">
+      <Link className="logo" to="/personal-website">
         NS
       </Link>
       <button

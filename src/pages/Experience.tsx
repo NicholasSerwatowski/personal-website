@@ -14,19 +14,19 @@ function Experience() {
         links={[
           {
             title: "Awards",
-            path: "/experience/awards",
+            path: "/personal-website/experience/awards",
           },
           {
             title: "Education",
-            path: "/experience/education",
+            path: "/personal-website/experience/education",
           },
           {
             title: "Leadership",
-            path: "/experience/leadership",
+            path: "/personal-website/experience/leadership",
           },
           {
             title: "Work",
-            path: "/experience/work",
+            path: "/personal-website/experience/work",
           }
         ]}
       />

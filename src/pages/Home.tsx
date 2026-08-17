@@ -71,9 +71,8 @@ function Home() {
 
             {/* This is the hero description for the home page */}
             <p className="hero-description">
-                Computer Engineering student.
-                Software Engineer.
-                Builder.
+                Mechanical and Aerospace Engineering student.
+                Aspiring engineer.
                 Curious about difficult problems.
             </p>
         </div>

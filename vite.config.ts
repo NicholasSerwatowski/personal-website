@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
-  base: "", // The page that is first seen when opening the website
+  base: "/personal-website/", // The page that is first seen when opening the website
 
   plugins: [
     react(),
@@ -12,8 +12,8 @@ export default defineConfig({
       manifest: {
         name: "My Tab App", // My Tab App = Name of App
         short_name: "Tabs", // Tabs = Shortened Name
-        scope: "/test/", // test = Repo name
-        start_url: "/test/", // test = Repo name
+        scope: "/personal-website/", // personal-wbsite = Repo name
+        start_url: "/personal-website/", // personal-wbsite = Repo name
         display: "standalone",
         background_color: "#ffffff",
         theme_color: "#000000",
