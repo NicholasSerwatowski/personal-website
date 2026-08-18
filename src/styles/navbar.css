@@ -64,7 +64,17 @@
   color: #60a5fa !important;
 }
 
-@media (max-width: 900px) {
+/* Desktop */
+.hamburger {
+  display: none;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+/* Phone */
+@media (max-width: 768px) {
   .hamburger {
     display: block;
   }

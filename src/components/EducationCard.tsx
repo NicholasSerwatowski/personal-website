@@ -29,7 +29,7 @@ function EducationCard({ school }: EducationCardProps) {
         </p>
 
         <Link
-          to="/personal-website/experience/education/cwru"
+          to={school.link}
           className="education-card-button"
         >
           Learn More →

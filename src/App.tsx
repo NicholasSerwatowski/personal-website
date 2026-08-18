@@ -17,6 +17,7 @@ import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
   import Education from "./pages/experience/Education";
     import CWRU from "./pages/experience/education/CWRU";
+    import PLHS from "./pages/experience/education/PLHS";
   import Work from "./pages/experience/Work";
   import Leadership from "./pages/experience/Leadership";
   import Awards from "./pages/experience/Awards";
@@ -68,6 +69,7 @@ function App() {
           {/* These are the sub-pages for the experience topics */}
           <Route path="/personal-website/experience/education" element={<Education />} />
             <Route path="/personal-website/experience/education/cwru" element={<CWRU />} />
+            <Route path="/personal-website/experience/education/plhs" element={<PLHS />} />
 
           <Route path="/personal-website/experience/work" element={<Work />} />
           <Route path="/personal-website/experience/leadership" element={<Leadership />} />

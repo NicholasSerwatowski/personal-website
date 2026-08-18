@@ -20,13 +20,13 @@ function Contact() {
         <ContactLink
           title="LinkedIn"
           image={linkedinImage}
-          link="https://www.linkedin.com/in/YOUR-USERNAME/"
+          link="https://www.linkedin.com/in/nicholasserwatowski/"
         />
 
         <ContactLink
           title="GitHub"
           image={githubImage}
-          link="https://github.com/YOUR-USERNAME"
+          link="https://github.com/NicholasSerwatowski"
         />
 
         <ContactLink

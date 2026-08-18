@@ -14,23 +14,23 @@ function Interests() {
         links={[
           {
             title: "Photography",
-            path: "/interests/photography",
+            path: "/personal-website/interests/photography",
           },
           {
             title: "Books",
-            path: "/interests/books",
+            path: "/personal-website/interests/books",
           },
           {
             title: "Learning",
-            path: "/interests/learning",
+            path: "/personal-website/interests/learning",
           },
           {
             title: "Music",
-            path: "/interests/music",
+            path: "/personal-website/interests/music",
           },
           {
             title: "Travel",
-            path: "/interests/travel",}
+            path: "/personal-website/interests/travel",}
         ]}
       />
     </section>

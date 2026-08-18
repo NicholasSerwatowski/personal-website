@@ -14,19 +14,19 @@ function Projects() {
         links={[
           {
             title: "Archive",
-            path: "/projects/archive",
+            path: "/personal-website/projects/archive",
           },
           {
             title: "Featured",
-            path: "/projects/featured",
+            path: "/personal-website/projects/featured",
           },
           {
             title: "Personal",
-            path: "/projects/personal",
+            path: "/personal-website/projects/personal",
           },
           {
             title: "Research",
-            path: "/projects/research",}
+            path: "/personal-website/projects/research",}
         ]}
       />
     </section>

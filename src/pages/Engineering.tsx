@@ -14,15 +14,15 @@ function Engineering() {
         links={[
           {
             title: "Combat Robotics",
-            path: "/engineering/combatrobotics",
+            path: "/presonal-website/engineering/combatrobotics",
           },
           {
             title: "Case Wind",
-            path: "/engineering/casewind",
+            path: "/personal-website/engineering/casewind",
           },
           {
             title: "CAD",
-            path: "/engineering/cad",
+            path: "/personal-website/engineering/cad",
           },
         ]}
       />
