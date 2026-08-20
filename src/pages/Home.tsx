@@ -12,42 +12,69 @@ const skillCategories = [
   {
     name: "Engineering",
     skills: [
-      "CAD",
-      "Mechanical Design",
-      "Prototyping",
-      "Manufacturing",
-      "Testing",
-      "Troubleshooting",
+      "Drill Press",
+      "Milling",
+      "SolidWorks",
+      "Lathe",
+      "Band Saw",
+      "Waterjet",
     ],
   },
   {
     name: "Programming",
     skills: [
       "Python",
-      "C++",
-      "JavaScript",
       "TypeScript",
       "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "GitHub",
+      "MATLAB",
     ],
   },
-  {
-    name: "Software",
+    {
+    name: "Other Software",
     skills: [
-      "SolidWorks",
-      "MATLAB",
-      "Git",
-      "VS Code",
-      "Microsoft Excel",
+      "Google Suite",
+      "Microsoft Office",
+      "Adobe Suite",
     ],
   },
   {
     name: "Soft Skills",
     skills: [
-      "Problem Solving",
-      "Teamwork",
-      "Communication",
-      "Leadership",
-      "Technical Writing",
+      "Interdisciplinary Collaboration",
+      "Project Management",
+      "Team Leadership",
+      "Organizational Development",
+      "Strategic Planning",
+      "Risk Analysis",
+    ],
+  },
+  {
+    name: "Languages",
+    skills: [
+      "English (Native)",
+      "Spanish (Intermediate)",
+    ],
+  },
+  {
+    name: "Music",
+    skills: [
+      "Piano",
+      "Auxiliary Percussion",
+      "Keyboard Percussion",
+      "Music Theory",
+    ],
+  },
+  {
+    name: "Misc",
+    skills: [
+      "First Aid Certified",
+      "Point of Sale (POS) Systems",
+      "Keyboard Percussion",
+      "Music Theory",
     ],
   },
 ];
@@ -56,44 +83,43 @@ const skillCategories = [
 const projects = [
   // This is one project
   {
-    title: "Productive Planner",
+    title: "Case Wind Co-founder",
     description:
-      "A task and goal tracking app focused on calm, focused workflows for busy teams and individuals.",
-    stack: ["React", "TypeScript", "CSS"],
+      `Founded and launched a student engineering team within CWRUBotix to compete
+      in the 2027 Collegiate Wind Competition, developing the team’s 
+      organizational structure, securing resources, coordinating leadership, 
+      and recruiting an initial group of committed students.`,
+    stack: ["Python", "GitHub", "Team Leadership"],
   },
   // This is one project
   {
-    title: "Insight Dashboard",
+    title: "PLV Media App Developer",
     description:
-      "An analytics experience that turns complex data into clear, actionable summaries for stakeholders.",
-    stack: ["JavaScript", "Node.js", "REST APIs"],
-  },
-  // This is one project
-  {
-    title: "Portfolio Platform",
-    description:
-      "A modern personal brand site designed to help professionals stand out during hiring and networking.",
-    stack: ["Vite", "React", "Responsive Design"],
+      `Led a senior capstone project to modernize my high school’s Media Academy 
+      equipment inventory by developing a structured cataloging system and an equipment 
+      checkout and reservation app concept, while independently managing the project 
+      and leading a small team.`,
+    stack: ["R&D", "Glide API", "Project Management"],
   },
 ];
 
 const highlights = [
   {
-    title: "Combat Robotics",
+    title: "Placeholder",
     description:
-      "Designing and competing with CWRUBotix, a collegiate combat robotics team.",
+      "Placeholder",
     image: cwruImage,
   },
   {
-    title: "Case Wind",
+    title: "Placeholder",
     description:
-      "Working with Case Wind to design and develop a wind turbine for the DOE Collegiate Wind Competition.",
+      "Placeholder",
     image: cwruImage,
   },
   {
-    title: "Music",
+    title: "Placeholder",
     description:
-      "A lifelong interest in music that first sparked my fascination with patterns.",
+      "Placeholder",
     image: cwruImage,
   },
 ];
@@ -119,7 +145,8 @@ function Home() {
 
             {/* This is the hero description for the home page */}
             <p className="hero-description">
-                Mechanical and Aerospace Engineering student.
+                Mechanical & Aerospace Engineering Student 
+                | Robotics Enthusiast | Builder | Musician | Community Leader
             </p>
         </div>
 
@@ -194,7 +221,6 @@ function Home() {
               Core strengths that support modern engineering and product development.
             </h2>
           </div>
-
           <SkillsTabs categories={skillCategories} />
         </section>
 
@@ -238,7 +264,7 @@ function Home() {
           <div className="section-heading">
             <p className="eyebrow">Resume</p>
             <h2>
-              A snapshot of my engineering experience and skills.
+              A snapshot of my experience and skills.
             </h2>
           </div>
 

@@ -24,9 +24,6 @@ function Projects() {
             title: "Personal",
             path: "/personal-website/projects/personal",
           },
-          {
-            title: "Research",
-            path: "/personal-website/projects/research",}
         ]}
       />
     </section>

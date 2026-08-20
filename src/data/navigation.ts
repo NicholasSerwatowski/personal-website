@@ -14,12 +14,6 @@ export const navigation: NavigationItem[] = [
     path: "/personal-website/about",
   },
 
-  // This is the engineering page
-  {
-    title: "Engineering",
-    path: "/personal-website/engineering",
-  },
-
   // This is the projects page
   {
     title: "Projects",

@@ -21,8 +21,8 @@ function Experience() {
             path: "/personal-website/experience/education",
           },
           {
-            title: "Leadership",
-            path: "/personal-website/experience/leadership",
+            title: "Research",
+            path: "/personal-website/experience/research",
           },
           {
             title: "Work",

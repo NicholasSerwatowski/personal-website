@@ -328,3 +328,468 @@
 .skills-tab-content .pill-list {
   justify-content: center;
 }
+
+
+/* Specific Education Information */
+/* =========================================================
+   SCHOOL EDUCATION PAGES
+   ========================================================= */
+
+.school-header {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+
+/* School image */
+
+.school-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  display: block;
+}
+
+
+/* School header text */
+
+.school-header-content {
+  max-width: 750px;
+}
+
+.school-header-content .eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.school-header-content h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.school-header-content h2 {
+  margin: 0.75rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+.school-meta {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  opacity: 0.55;
+}
+
+.school-description {
+  margin: 1.5rem 0 0;
+  max-width: 650px;
+  line-height: 1.75;
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   EDUCATION TABS
+   ========================================================= */
+
+.education-tabs {
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+/* Main tab navigation */
+
+.education-tab-buttons {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--border-color, rgba(128, 128, 128, 0.25));
+  margin-bottom: 2.5rem;
+}
+
+.education-tab-buttons button {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0.9rem 1.25rem;
+  margin-bottom: -1px;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  color: inherit;
+  opacity: 0.5;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.education-tab-buttons button:hover {
+  opacity: 0.8;
+}
+
+.education-tab-buttons button.active {
+  opacity: 1;
+}
+
+.education-tab-buttons button.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: currentColor;
+
+  border-radius: 2px 2px 0 0;
+}
+
+
+/* =========================================================
+   TAB CONTENT
+   ========================================================= */
+
+.education-tab-content {
+  animation: educationTabFade 0.2s ease;
+}
+
+@keyframes educationTabFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   ACTIVITIES / AWARDS
+   ========================================================= */
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid
+    var(--border-color, rgba(128, 128, 128, 0.18));
+}
+
+.education-item:first-child {
+  padding-top: 0;
+}
+
+.education-item:last-child {
+  border-bottom: none;
+}
+
+.education-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.education-item-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.education-item-role {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.55;
+}
+
+.education-item-date {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+.education-item-description {
+  max-width: 750px;
+  margin: 0.75rem 0 0;
+  line-height: 1.65;
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   CLASS YEAR TABS
+   ========================================================= */
+
+.education-year-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  margin-bottom: 1.75rem;
+}
+
+.education-year-tabs button {
+  border: 1px solid
+    var(--border-color, rgba(128, 128, 128, 0.25));
+
+  background: transparent;
+
+  border-radius: 999px;
+
+  padding: 0.45rem 0.9rem;
+
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  color: inherit;
+  opacity: 0.55;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.education-year-tabs button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.education-year-tabs button.active {
+  opacity: 1;
+  background: currentColor;
+  border-color: currentColor;
+}
+
+
+/*
+ * Since the button text inherits the page color,
+ * make the active text use the page background.
+ */
+.education-year-tabs button.active {
+  color: var(--background-color, #fff);
+}
+
+
+/* =========================================================
+   COURSE LIST
+   ========================================================= */
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid
+    var(--border-color, rgba(128, 128, 128, 0.18));
+}
+
+.course-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 2rem;
+
+  padding: 1.2rem 0;
+
+  border-bottom: 1px solid
+    var(--border-color, rgba(128, 128, 128, 0.18));
+
+  transition:
+    padding-left 0.2s ease,
+    padding-right 0.2s ease;
+}
+
+.course-item:hover {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+
+/* Course name */
+
+.course-main {
+  display: flex;
+  align-items: baseline;
+
+  gap: 1rem;
+
+  min-width: 0;
+}
+
+.course-code {
+  flex-shrink: 0;
+
+  min-width: 75px;
+
+  font-family: monospace;
+  font-size: 0.8rem;
+
+  opacity: 0.45;
+}
+
+.course-main h3 {
+  margin: 0;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+
+/* Semester + grade */
+
+.course-details {
+  display: flex;
+  align-items: center;
+
+  gap: 1.5rem;
+
+  flex-shrink: 0;
+
+  font-size: 0.85rem;
+
+  opacity: 0.55;
+}
+
+.course-grade {
+  min-width: 2rem;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+   ========================================================= */
+
+.education-empty {
+  margin: 0;
+  padding: 3rem 0;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+
+  opacity: 0.45;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .school-header {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+
+    margin-bottom: 3rem;
+  }
+
+  .school-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 1rem;
+  }
+
+  .school-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .school-header-content h2 {
+    font-size: 1rem;
+  }
+
+
+  /* Tabs */
+
+  .education-tab-buttons {
+    overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .education-tab-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .education-tab-buttons button {
+    flex-shrink: 0;
+
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+
+  /* Activity / award rows */
+
+  .education-item-header {
+    flex-direction: column;
+
+    gap: 0.35rem;
+  }
+
+  .education-item-date {
+    font-size: 0.8rem;
+  }
+
+
+  /* Courses */
+
+  .course-item {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+  }
+
+  .course-main {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 0.25rem;
+  }
+
+  .course-code {
+    min-width: 0;
+  }
+
+  .course-details {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+}

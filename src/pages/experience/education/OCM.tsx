@@ -1,9 +1,9 @@
 import { schools } from "../../../data/education";
 import EducationTabs from "../../../components/EducationTabs";
 
-function PLHS() {
+function OCM() {
   const school = schools.find(
-    (school) => school.id === "plhs"
+    (school) => school.id === "ocm"
   );
 
   if (!school) {
@@ -17,6 +17,7 @@ function PLHS() {
   return (
     <div className="section">
 
+      {/* School Header */}
       <div className="school-header">
 
         <img
@@ -51,10 +52,11 @@ function PLHS() {
 
       </div>
 
+      {/* School-specific information */}
       <EducationTabs school={school} />
 
     </div>
   );
 }
 
-export default PLHS;
+export default OCM;
