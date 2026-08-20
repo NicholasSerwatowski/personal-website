@@ -6,15 +6,17 @@ function Experience() {
     <section className="section">
       <h1>Experience</h1>
 
-      <p>
-        Experience
-      </p>
+      <p></p>
 
       <PageNavigation
         links={[
           {
             title: "Awards",
             path: "/personal-website/experience/awards",
+          },
+          {
+            title: "Certifications",
+            path: "/personal-website/experience/certifications",
           },
           {
             title: "Education",
@@ -27,7 +29,7 @@ function Experience() {
           {
             title: "Work",
             path: "/personal-website/experience/work",
-          }
+          },
         ]}
       />
     </section>

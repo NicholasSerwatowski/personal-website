@@ -6,9 +6,7 @@ function Interests() {
     <section className="section">
       <h1>Interests</h1>
 
-      <p>
-        Interests
-      </p>
+      <p></p>
 
       <PageNavigation
         links={[

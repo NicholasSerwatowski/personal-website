@@ -17,6 +17,7 @@ import Experience from "./pages/Experience";
   import Work from "./pages/experience/Work";
   import Research from "./pages/experience/Research";
   import Awards from "./pages/experience/Awards";
+  import Certifications from "./pages/experience/Certifications";
 import Interests from "./pages/Interests";
   import Music from "./pages/interests/Music";
   import Photography from "./pages/interests/Photography";
@@ -63,6 +64,7 @@ function App() {
           <Route path="/personal-website/experience/work" element={<Work />} />
           <Route path="/personal-website/experience/research" element={<Research />} />
           <Route path="/personal-website/experience/awards" element={<Awards />} />
+          <Route path="/personal-website/experience/certifications" element={<Certifications />} />
 
         {/* This is the interests page */}
         <Route path="/personal-website/interests" element={<Interests />} />

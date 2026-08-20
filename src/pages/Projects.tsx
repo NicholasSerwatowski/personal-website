@@ -6,9 +6,7 @@ function Projects() {
     <section className="section">
       <h1>Projects</h1>
 
-      <p>
-        Projects
-      </p>
+      <p></p>
 
       <PageNavigation
         links={[
