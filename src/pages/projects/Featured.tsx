@@ -1,12 +1,24 @@
-function Featured() {
+import ProjectCard from "../../components/ProjectCard";
+import { featuredProjects } from "../../data/projects";
+
+const Featured = () => {
   return (
-    <div className="section">
+    <div className="projects-page">
       <h1>Featured</h1>
-      <p>
-        Featured
-      </p>
+
+      <div className="projects-grid">
+        {featuredProjects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            path={project.path}
+          />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Featured;
