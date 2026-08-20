@@ -61,7 +61,7 @@ const ProjectGallery = ({ images }: ProjectGalleryProps) => {
       </div>
 
       <div className="project-gallery-indicators">
-        {images.map((image, index) => (
+        {images.map((_, index) => (
           <button
             key={index}
             className={`project-gallery-indicator ${
