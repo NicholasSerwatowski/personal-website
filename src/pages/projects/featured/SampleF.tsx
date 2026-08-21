@@ -1,4 +1,3 @@
-import "../../../styles/pages.css";
 import ProjectGallery from "../../../components/ProjectGallery";
 import cwruImage from "../../../assets/cwru.jpg";
 

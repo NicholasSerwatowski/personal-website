@@ -1,0 +1,146 @@
+/* Work Tabs */
+/* =========================
+   Work
+   ========================= */
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.work-card {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.work-image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.work-content {
+  flex: 1;
+}
+
+.work-content h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.5rem;
+}
+
+.work-content h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.work-meta {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.work-content > p {
+  line-height: 1.6;
+}
+
+/* Responsibilities */
+
+.work-responsibilities {
+  margin-top: 1.5rem;
+}
+
+.work-responsibilities h4,
+.work-skills h4 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.work-responsibilities ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.work-responsibilities li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Skills */
+
+.work-skills {
+  margin-top: 1.5rem;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background-color: #e5e5e5;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   Work Gallery
+   ========================= */
+
+.work-gallery {
+  margin-top: 1.5rem;
+}
+
+.work-gallery h4,
+.related-projects h4 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.work-gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.work-gallery-image {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   Related Projects
+   ========================= */
+
+.related-projects {
+  margin-top: 1.5rem;
+}
+
+.related-project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.related-project {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background-color: #e5e5e5;
+  font-size: 0.85rem;
+}

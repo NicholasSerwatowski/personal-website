@@ -1,0 +1,483 @@
+/* ================================
+   PROJECTS
+   ================================ */
+
+.projects-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.projects-page h1 {
+  margin-bottom: 30px;
+}
+
+/* ================================
+   PROJECT GRID
+   ================================ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* ================================
+   PROJECT CARD
+   ================================ */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ================================
+   PROJECT CARD IMAGE
+   ================================ */
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================================
+   PROJECT CARD CONTENT
+   ================================ */
+
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+  flex: 1;
+}
+
+.project-card-content h2 {
+  margin: 0 0 10px;
+}
+
+.project-card-content p {
+  margin: 0 0 20px;
+
+  line-height: 1.5;
+}
+
+.project-card-content span {
+  margin-top: auto;
+
+  font-weight: 600;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   PROJECT DETAIL PAGE
+   ========================================= */
+
+.project-detail-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 30px 80px;
+}
+
+/* =========================================
+   PROJECT HEADER
+   ========================================= */
+
+.project-detail-header {
+  margin-bottom: 60px;
+}
+
+.project-detail-title {
+  margin-bottom: 30px;
+}
+
+.project-detail-title h1 {
+  margin: 0 0 10px;
+  font-size: 3rem;
+}
+
+.project-detail-title p {
+  margin: 0;
+  max-width: 750px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   HERO IMAGE
+   ========================================= */
+
+.project-detail-hero {
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.project-detail-hero img {
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+  display: inline-block;
+  border-radius: 12px;
+}
+
+/* =========================================
+   PROJECT META
+   ========================================= */
+
+.project-detail-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 50px;
+
+  padding: 25px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.project-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.project-meta-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.project-meta-value {
+  font-size: 1rem;
+}
+
+/* =========================================
+   PROJECT SECTIONS
+   ========================================= */
+
+.project-detail-section {
+  padding: 45px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.project-detail-section:last-child {
+  border-bottom: none;
+}
+
+.project-detail-section h2 {
+  margin: 0 0 25px;
+  font-size: 2rem;
+}
+
+.project-detail-section p {
+  max-width: 850px;
+  margin: 0 0 20px;
+
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.project-detail-section ul {
+  max-width: 850px;
+  margin: 0;
+  padding-left: 25px;
+}
+
+.project-detail-section li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   ENGINEERING SUBSECTIONS
+   ========================================= */
+
+.project-detail-subsection {
+  margin-top: 35px;
+}
+
+.project-detail-subsection h3 {
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+}
+
+/* =========================================
+   GALLERY
+   ========================================= */
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 220px;
+
+  display: block;
+
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* =========================================
+   TECHNOLOGIES / SKILLS
+   ========================================= */
+
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-skills span {
+  padding: 8px 14px;
+
+  border: 1px solid #ccc;
+  border-radius: 20px;
+
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .project-detail-page {
+    padding: 40px 25px 60px;
+  }
+
+  .project-detail-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .project-detail-hero img {
+    height: 400px;
+  }
+
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-detail-page {
+    padding: 30px 20px 50px;
+  }
+
+  .project-detail-title h1 {
+    font-size: 2rem;
+  }
+
+  .project-detail-title p {
+    font-size: 1rem;
+  }
+
+  .project-detail-hero img {
+    height: 250px;
+  }
+
+  .project-detail-meta {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-detail-section {
+    padding: 35px 0;
+  }
+
+  .project-detail-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery img {
+    height: auto;
+  }
+}
+
+/* =========================================
+   PROJECT GALLERY
+   ========================================= */
+
+.project-gallery {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.project-gallery-image-container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.project-gallery-image {
+  display: block;
+
+  max-width: 85%;
+  max-height: 550px;
+
+  width: auto;
+  height: auto;
+
+  border-radius: 10px;
+}
+
+/* Gallery arrows */
+
+.project-gallery-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.2s ease;
+}
+
+.project-gallery-button:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.project-gallery-button-left {
+  left: 10px;
+}
+
+.project-gallery-button-right {
+  right: 10px;
+}
+
+/* Gallery description */
+
+.project-gallery-info {
+  text-align: center;
+
+  max-width: 750px;
+
+  margin: 20px auto 0;
+}
+
+.project-gallery-info h3 {
+  margin: 0 0 8px;
+}
+
+.project-gallery-info p {
+  margin: 0;
+
+  line-height: 1.6;
+}
+
+/* Indicators */
+
+.project-gallery-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.project-gallery-indicator {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ccc;
+
+  cursor: pointer;
+}
+
+.project-gallery-indicator.active {
+  background: #333;
+}
+
+/* Counter */
+
+.project-gallery-counter {
+  margin-top: 10px;
+
+  text-align: center;
+
+  font-size: 0.85rem;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .project-gallery-image {
+    max-width: 90%;
+    max-height: 400px;
+  }
+
+  .project-gallery-button {
+    width: 36px;
+    height: 36px;
+
+    font-size: 1.2rem;
+  }
+}

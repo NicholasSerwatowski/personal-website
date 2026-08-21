@@ -1,0 +1,396 @@
+/* =========================================
+   Travel Page
+   ========================================= */
+
+.travel-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* =========================================
+   Header
+   ========================================= */
+
+.travel-header {
+  max-width: 850px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.travel-header h1 {
+  margin: 0 0 1rem;
+  font-size: 3.5rem;
+}
+
+.travel-header p {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   Sections
+   ========================================= */
+
+.travel-section {
+  margin-bottom: 6rem;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.section-heading p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================================
+   Destinations
+   ========================================= */
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.destination-card {
+  overflow: hidden;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.destination-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.destination-image {
+  aspect-ratio: 4 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dddddd;
+  color: #777777;
+}
+
+.destination-large .destination-image {
+  aspect-ratio: 1 / 1;
+}
+
+.destination-info {
+  padding: 1.25rem;
+}
+
+.destination-location {
+  display: block;
+  margin-bottom: 0.4rem;
+
+  color: #777777;
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.destination-info h3 {
+  margin: 0 0 0.5rem;
+}
+
+.destination-info p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   Favorite Trips
+   ========================================= */
+
+.trip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.trip-card {
+  display: grid;
+  grid-template-columns: 50px 320px 1fr;
+  gap: 2rem;
+  align-items: center;
+
+  padding: 1.5rem;
+
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.trip-number {
+  color: #999999;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.trip-image {
+  aspect-ratio: 4 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  background: #dddddd;
+  color: #777777;
+}
+
+.trip-date {
+  display: block;
+  margin-bottom: 0.5rem;
+
+  color: #777777;
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+.trip-info h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.trip-location {
+  margin: 0 0 1rem;
+
+  color: #777777;
+  font-size: 0.9rem;
+}
+
+.trip-info > p:last-child {
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* =========================================
+   Travel Interests
+   ========================================= */
+
+.travel-interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.travel-interest-card {
+  padding: 1.75rem;
+
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.travel-interest-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.travel-interest-number {
+  display: block;
+  margin-bottom: 1.25rem;
+
+  color: #999999;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.travel-interest-card h3 {
+  margin: 0 0 0.6rem;
+}
+
+.travel-interest-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================================
+   Future Destinations
+   ========================================= */
+
+.future-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+}
+
+.future-card {
+  min-height: 150px;
+  padding: 1.5rem;
+
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+
+  transition: background 0.2s ease;
+}
+
+.future-card:hover {
+  background: #f7f7f7;
+}
+
+.future-card > span {
+  display: block;
+  margin-bottom: 1.5rem;
+
+  color: #999999;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.future-card h3 {
+  margin: 0 0 0.3rem;
+}
+
+.future-card p {
+  margin: 0;
+
+  color: #777777;
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   Closing
+   ========================================= */
+
+.travel-closing {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 4rem 0;
+
+  text-align: center;
+
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+
+.travel-closing h2 {
+  margin: 0 0 1rem;
+  font-size: 2.25rem;
+}
+
+.travel-closing p {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+
+@media (max-width: 1100px) {
+  .destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destination-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .destination-large .destination-image {
+    aspect-ratio: 16 / 7;
+  }
+
+  .travel-interest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .travel-page {
+    padding: 2rem 1.25rem;
+  }
+
+  .travel-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .travel-header h1 {
+    font-size: 2.75rem;
+  }
+
+  .trip-card {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .trip-number {
+    display: none;
+  }
+
+  .trip-image {
+    width: 100%;
+  }
+
+  .future-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .destination-grid,
+  .travel-interest-grid,
+  .future-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-large {
+    grid-column: span 1;
+  }
+
+  .destination-large .destination-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .travel-section {
+    margin-bottom: 4rem;
+  }
+
+  .travel-closing {
+    padding: 3rem 0;
+  }
+
+  .travel-closing h2 {
+    font-size: 1.8rem;
+  }
+}

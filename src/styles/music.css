@@ -1,0 +1,383 @@
+/* =========================================
+   Music Page
+   ========================================= */
+
+.music-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* =========================================
+   Header
+   ========================================= */
+
+.music-header {
+  max-width: 850px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.music-header h1 {
+  margin: 0 0 1rem;
+  font-size: 3.5rem;
+}
+
+.music-header p {
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* =========================================
+   Sections
+   ========================================= */
+
+.music-section {
+  margin-bottom: 6rem;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.section-heading p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================================
+   Albums
+   ========================================= */
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.album-card {
+  min-width: 0;
+}
+
+.album-cover {
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1rem;
+
+  border-radius: 8px;
+  background: #e5e5e5;
+  color: #777777;
+
+  overflow: hidden;
+}
+
+.album-cover span {
+  font-size: 0.85rem;
+}
+
+.album-info h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.album-info p {
+  margin: 0 0 0.35rem;
+  color: #555555;
+}
+
+.album-info span {
+  color: #888888;
+  font-size: 0.8rem;
+}
+
+/* =========================================
+   Artists
+   ========================================= */
+
+.artist-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid #dddddd;
+}
+
+.artist-card {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 1rem;
+  align-items: center;
+
+  padding: 1.5rem;
+
+  border-bottom: 1px solid #dddddd;
+
+  transition: background 0.2s ease;
+}
+
+.artist-card:nth-child(odd) {
+  border-right: 1px solid #dddddd;
+}
+
+.artist-card:hover {
+  background: #f7f7f7;
+}
+
+.artist-number {
+  color: #999999;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.artist-card h3 {
+  margin: 0 0 0.3rem;
+}
+
+.artist-card p {
+  margin: 0;
+  color: #777777;
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   Genres
+   ========================================= */
+
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.genre-card {
+  padding: 1.5rem;
+
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.genre-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.genre-card h3 {
+  margin: 0 0 0.4rem;
+}
+
+.genre-card p {
+  margin: 0;
+  color: #777777;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* =========================================
+   Songs
+   ========================================= */
+
+.song-list {
+  border-top: 1px solid #dddddd;
+}
+
+.song-item {
+  display: grid;
+  grid-template-columns: 50px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+
+  padding: 1.25rem 0;
+
+  border-bottom: 1px solid #dddddd;
+}
+
+.song-number {
+  color: #999999;
+  font-size: 0.8rem;
+}
+
+.song-info h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.song-info p {
+  margin: 0;
+  color: #777777;
+  font-size: 0.85rem;
+}
+
+.song-duration {
+  color: #888888;
+  font-size: 0.8rem;
+}
+
+/* =========================================
+   Personal Story
+   ========================================= */
+
+.music-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+
+  padding: 3rem;
+
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.music-story-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-label {
+  margin-bottom: 1rem;
+
+  color: #777777;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.music-story-content h2 {
+  margin: 0 0 1.25rem;
+  font-size: 2rem;
+}
+
+.music-story-content p {
+  margin: 0 0 1rem;
+  line-height: 1.8;
+}
+
+.music-story-content p:last-child {
+  margin-bottom: 0;
+}
+
+.music-story-placeholder {
+  min-height: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  background: #dddddd;
+  color: #777777;
+
+  text-align: center;
+}
+
+/* =========================================
+   Closing
+   ========================================= */
+
+.music-closing {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 4rem 0;
+
+  text-align: center;
+
+  border-top: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+}
+
+.music-closing h2 {
+  margin: 0 0 1rem;
+  font-size: 2.25rem;
+}
+
+.music-closing p {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+
+@media (max-width: 1000px) {
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .genre-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .music-page {
+    padding: 2rem 1.25rem;
+  }
+
+  .music-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .music-header h1 {
+    font-size: 2.75rem;
+  }
+
+  .music-story {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .music-story-placeholder {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .album-grid,
+  .genre-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-list {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-card:nth-child(odd) {
+    border-right: none;
+  }
+
+  .song-item {
+    grid-template-columns: 35px 1fr auto;
+  }
+
+  .music-section {
+    margin-bottom: 4rem;
+  }
+
+  .music-closing {
+    padding: 3rem 0;
+  }
+
+  .music-closing h2 {
+    font-size: 1.8rem;
+  }
+}

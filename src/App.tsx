@@ -33,6 +33,20 @@ import Contact from "./pages/Contact";
 // This provides the global styles
 import "./styles/app.css";
 import "./styles/pages.css";
+import "./styles/education.css";
+import "./styles/books.css";
+import "./styles/contact.css";
+import "./styles/projects.css";
+import "./styles/navbar.css";
+import "./styles/home.css";
+import "./styles/awards.css";
+import "./styles/work.css";
+import "./styles/research.css";
+import "./styles/certifications.css";
+import "./styles/photography.css";
+import "./styles/learning.css";
+import "./styles/travel.css";
+import "./styles/music.css";
 
 // This is the main app
 function App() {
