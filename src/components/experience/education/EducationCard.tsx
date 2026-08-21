@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { School } from "../data/education";
+import type { School } from "../../../data/experience/education";
 
 interface EducationCardProps {
   school: School;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { School } from "../data/education";
+import type { School } from "../../../data/experience/education";
 
 interface EducationTabsProps {
   school: School;

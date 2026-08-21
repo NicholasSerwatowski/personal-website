@@ -1,6 +1,6 @@
 /* Overall contact page settings */
 
-import ContactLink from "../components/ContactLink";
+import ContactLink from "../components/contact/ContactLink";
 import linkedinImage from "../assets/linkedin.png";
 import githubImage from "../assets/github.png";
 import emailImage from "../assets/email.png";

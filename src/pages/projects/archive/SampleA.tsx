@@ -1,4 +1,4 @@
-import ProjectGallery from "../../../components/ProjectGallery";
+import ProjectGallery from "../../../components/projects/ProjectGallery";
 import cwruImage from "../../../assets/cwru.jpg";
 
 const SampleA = () => {

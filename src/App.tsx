@@ -33,20 +33,24 @@ import Contact from "./pages/Contact";
 // This provides the global styles
 import "./styles/app.css";
 import "./styles/pages.css";
-import "./styles/education.css";
-import "./styles/books.css";
-import "./styles/contact.css";
-import "./styles/projects.css";
 import "./styles/navbar.css";
+
+import "./styles/about.css";
+import "./styles/contact.css";
+import "./styles/experience.css";
+  import "./styles/experience/awards.css";
+  import "./styles/experience/certifications.css";
+  import "./styles/experience/education.css";
+  import "./styles/experience/research.css";
+  import "./styles/experience/work.css";
+import "./styles/interests.css";
+  import "./styles/interests/books.css";
+  import "./styles/interests/learning.css";
+  import "./styles/interests/music.css";
+  import "./styles/interests/photography.css";
+  import "./styles/interests/travel.css";
 import "./styles/home.css";
-import "./styles/awards.css";
-import "./styles/work.css";
-import "./styles/research.css";
-import "./styles/certifications.css";
-import "./styles/photography.css";
-import "./styles/learning.css";
-import "./styles/travel.css";
-import "./styles/music.css";
+import "./styles/projects.css";
 
 // This is the main app
 function App() {

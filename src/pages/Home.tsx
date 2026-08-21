@@ -4,8 +4,8 @@ import profileImage from "../assets/ProfessionalCloseUp.jpg";
 import resumePreview from "../assets/Nicholas_Serwatowski_Resume.png";
 import resumePDF from "../assets/Nicholas_Serwatowski_Resume.pdf";
 import cwruImage from "../assets/cwru.jpg";
-import HighlightCarousel from "../components/HighlightCarousel";
-import SkillsTabs from "../components/SkillsTabs";
+import HighlightCarousel from "../components/home/HighlightCarousel";
+import SkillsTabs from "../components/home/SkillsTabs";
 
 // This represents the skills, projects, and highlights for the home page
 const skillCategories = [

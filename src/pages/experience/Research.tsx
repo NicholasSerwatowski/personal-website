@@ -1,4 +1,4 @@
-import { researchExperience } from "../../data/research";
+import { researchExperience } from "../../data/experience/research";
 
 function Research() {
   return (

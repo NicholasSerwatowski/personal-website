@@ -1,4 +1,4 @@
-import { workExperience } from "../../data/work";
+import { workExperience } from "../../data/experience/work";
 
 function Work() {
   return (

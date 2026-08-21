@@ -1,5 +1,5 @@
-import { schools } from "../../../data/education";
-import EducationTabs from "../../../components/EducationTabs";
+import { schools } from "../../../data/experience/education";
+import EducationTabs from "../../../components/experience/education/EducationTabs";
 
 function CWRU() {
   const school = schools.find(

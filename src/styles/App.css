@@ -1,4 +1,7 @@
-/* General App Styles */
+/* =========================================
+   APP.CSS
+   ========================================= */
+
 body {
   background: white !important;
 }
@@ -90,21 +93,33 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.page-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 30px;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
-.page-navigation .button-secondary {
-  background: #1d4ed8;
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: white;
+  color: #0f172a;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.14);
   color: white;
-  border: 1px solid #1d4ed8;
-}
-
-.page-navigation .button-secondary:hover {
-  background: #2563eb;
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .hero-stats {
@@ -159,7 +174,10 @@ body {
   gap: 10px;
 }
 
-/* Section styles, important in home tab */
+/* =========================================
+   SECTION STYLES
+   ========================================= */
+
 .section {
   max-width: 1200px;
   margin: auto;
@@ -298,7 +316,10 @@ body {
   font: inherit;
 }
 
-/* Resume Card Styles */
+/* =========================================
+   RESUME CARD
+   ========================================= */
+
 .resume-card {
   display: flex;
   flex-direction: column;
@@ -306,7 +327,10 @@ body {
   gap: 2rem;
 }
 
-/* Resume Preview Styles */
+/* =========================================
+   RESUME PREVIEW
+   ========================================= */
+
 .resume-preview {
   width: 650px;
   max-width: 100%;
@@ -314,7 +338,10 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Resume Actions Styles */
+/* =========================================
+   RESUME ACTION
+   ========================================= */
+
 .resume-actions {
   display: flex;
   justify-content: center;

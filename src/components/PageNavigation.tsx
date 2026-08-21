@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 interface PageLink {
   title: string;
   path: string;
+  image?: string;
 }
 
 interface PageNavigationProps {
@@ -18,7 +19,19 @@ function PageNavigation({ links }: PageNavigationProps) {
           to={link.path}
           className="button button-secondary"
         >
-          {link.title}
+          {link.image && (
+            <span className="page-navigation-icon-wrapper">
+              <img
+                src={link.image}
+                alt=""
+                className="page-navigation-icon"
+              />
+            </span>
+          )}
+
+          <span className="page-navigation-title">{link.title}</span>
+
+          <span className="page-navigation-arrow">→</span>
         </Link>
       ))}
     </div>

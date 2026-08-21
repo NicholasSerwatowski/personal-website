@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { certifications } from "../../data/certifications";
+import { certifications } from "../../data/experience/certifications";
 
 function Certifications() {
   const [selectedCertificate, setSelectedCertificate] = useState<

@@ -1,0 +1,79 @@
+/* =========================================
+   INTERESTS PAGE NAVIGATION
+   ========================================= */
+
+.interests-page .page-navigation {
+  width: 100%;
+  max-width: 700px;
+  margin: 40px auto 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.interests-page .page-navigation .button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 64px;
+  padding: 10px 20px;
+
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.interests-page .page-navigation .button:hover {
+  transform: translateY(-2px);
+  background: #f8fafc;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
+}
+
+/* Image */
+
+.interests-page .page-navigation-icon-wrapper {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.interests-page .page-navigation-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+/* Centered title */
+
+.interests-page .page-navigation-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Right arrow */
+
+.interests-page .page-navigation-arrow {
+  margin-left: auto;
+  font-size: 1.25rem;
+}

@@ -1,5 +1,5 @@
-import { schools } from "../../data/education";
-import EducationCard from "../../components/EducationCard";
+import { schools } from "../../data/experience/education";
+import EducationCard from "../../components/experience/education/EducationCard";
 
 function Education() {
   return (

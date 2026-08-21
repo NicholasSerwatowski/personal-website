@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/books.css";
+import "../../styles/interests/books.css";
 
 const Books: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { awards } from "../../data/awards";
+import { awards } from "../../data/experience/awards";
 
 function Awards() {
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(
