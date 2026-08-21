@@ -1,333 +1,279 @@
-// Change file as needed
-// This imports the profile image for the home page
 import profileImage from "../assets/ProfessionalCloseUp.jpg";
 import resumePreview from "../assets/Nicholas_Serwatowski_Resume.png";
 import resumePDF from "../assets/Nicholas_Serwatowski_Resume.pdf";
-import cwruImage from "../assets/cwru.jpg";
+
 import HighlightCarousel from "../components/home/HighlightCarousel";
 import SkillsTabs from "../components/home/SkillsTabs";
 
-// This represents the skills, projects, and highlights for the home page
-const skillCategories = [
-  {
-    name: "Engineering",
-    skills: [
-      "Drill Press",
-      "Milling",
-      "SolidWorks",
-      "Lathe",
-      "Band Saw",
-      "Waterjet",
-    ],
-  },
-  {
-    name: "Programming",
-    skills: [
-      "Python",
-      "TypeScript",
-      "React",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "GitHub",
-      "MATLAB",
-    ],
-  },
-    {
-    name: "Other Software",
-    skills: [
-      "Google Suite",
-      "Microsoft Office",
-      "Adobe Suite",
-    ],
-  },
-  {
-    name: "Soft Skills",
-    skills: [
-      "Interdisciplinary Collaboration",
-      "Project Management",
-      "Team Leadership",
-      "Organizational Development",
-      "Strategic Planning",
-      "Risk Analysis",
-    ],
-  },
-  {
-    name: "Languages",
-    skills: [
-      "English (Native)",
-      "Spanish (Intermediate)",
-    ],
-  },
-  {
-    name: "Music",
-    skills: [
-      "Piano",
-      "Auxiliary Percussion",
-      "Keyboard Percussion",
-      "Music Theory",
-    ],
-  },
-  {
-    name: "Misc",
-    skills: [
-      "First Aid Certified",
-      "Point of Sale (POS) Systems",
-      "Keyboard Percussion",
-      "Music Theory",
-    ],
-  },
-];
+import { homePage } from "../data/home";
+import { skillCategories } from "../data/home/skills";
+import { highlights } from "../data/home/highlights";
+import { homeProjects } from "../data/home/projects";
 
-// This represents the projects for the home page
-const projects = [
-  // This is one project
-  {
-    title: "Case Wind Co-founder",
-    description:
-      `Founded and launched a student engineering team within CWRUBotix to compete
-      in the 2027 Collegiate Wind Competition, developing the team’s 
-      organizational structure, securing resources, coordinating leadership, 
-      and recruiting an initial group of committed students.`,
-    stack: ["Python", "GitHub", "Team Leadership"],
-  },
-  // This is one project
-  {
-    title: "PLV Media App Developer",
-    description:
-      `Led a senior capstone project to modernize my high school’s Media Academy 
-      equipment inventory by developing a structured cataloging system and an equipment 
-      checkout and reservation app concept, while independently managing the project 
-      and leading a small team.`,
-    stack: ["R&D", "Glide API", "Project Management"],
-  },
-];
-
-const highlights = [
-  {
-    title: "Placeholder",
-    description:
-      "Placeholder",
-    image: cwruImage,
-  },
-  {
-    title: "Placeholder",
-    description:
-      "Placeholder",
-    image: cwruImage,
-  },
-  {
-    title: "Placeholder",
-    description:
-      "Placeholder",
-    image: cwruImage,
-  },
-];
-
-// This is the home page
 function Home() {
   return (
     <>
-    {/* This is the hero section of the home page */}
-  <header className="hero">
-    <div className="hero-content">
-        <div className="hero-copy">
+      {/* Hero */}
+      <header className="hero">
+        <div className="hero-content">
 
-          {/* This is the hero eyebrow for the home page */}
+          <div className="hero-copy">
+
             <p className="eyebrow">
-                Hello, I'm
+              {homePage.hero.eyebrow}
             </p>
+
             <h1 className="hero-name">
-                Nicholas
-                <br />
-                Serwatowski
+              {homePage.hero.name}
             </h1>
 
-            {/* This is the hero description for the home page */}
             <p className="hero-description">
-                Mechanical & Aerospace Engineering Student 
-                | Robotics Enthusiast | Builder | Musician | Community Leader
+              {homePage.hero.title}
             </p>
-        </div>
 
-        {/* This is the hero image for the home page which is ProfessionalCloseUp.jpg */}
-        <div className="hero-image">
+          </div>
+
+          <div className="hero-image">
             <img
-                src={profileImage}
-                alt="Nicholas"
-                className="profile-image"
+              src={profileImage}
+              alt="Nicholas"
+              className="profile-image"
             />
+          </div>
+
         </div>
-    </div>
-  </header>
+      </header>
+
+
       <main>
 
-        {/* This is the about section of the home page */}
+        {/* About */}
         <section className="section">
+
           <div className="section-heading">
-            <p className="eyebrow">About Me</p>
-            <h2>
-              I'm driven by solving practical problems with innovative solutions.
-            </h2>
-          </div>
-          <div className="about-grid">
-            <p>
-              I'm a Mechanical & Aerospace Engineering student at Case Western Reserve University, 
-              and I care about building things that are useful, well-designed, and worth trusting. 
-              What motivates me most is the process of taking something I don't understand, 
-              breaking it down, and figuring out how it works. I tend to see the world as one 
-              big problem to solve, and I genuinely enjoy looking for the patterns and principles 
-              that make it all make sense. 
-              <br /><br />
-              I grew up in Papillion, Nebraska, where I first became 
-              interested in patterns through music and brain puzzles. I started playing violin before 
-              moving to piano, which eventually led me into percussion and a variety of band activities 
-              throughout school. Music was probably my first real introduction to recognizing patterns 
-              and relationships. The more I played, the more I started noticing those same ideas in 
-              mathematics. I became fascinated by the way mathematical patterns could show up in things 
-              that seemed completely unrelated. 
-              <br /><br />
-              That curiosity eventually led me to math and physics. 
-              I liked that they gave me a way to describe and understand the world around me. But I didn't 
-              just want to understand how things worked on paper—I wanted to do something with that 
-              understanding. I became fascinated by the idea of using those principles to design, build, 
-              test, and improve something in the real world. That is what ultimately drew me to mechanical 
-              and aerospace engineering. 
-              <br /><br />
-              Today, I get to pursue that interest through my coursework and 
-              hands-on projects at Case Western. Whether I'm designing and building a combat robot with CWRUbotix, 
-              working on a wind turbine through Case Wind, or simply taking something apart to understand it, 
-              I enjoy the same process: understand the problem, find the patterns, build a solution, and see if it 
-              actually works. 
-              <br /><br />
-              Outside of engineering, I still find myself drawn to the same things that started this whole 
-              journey—music, puzzles, learning, and anything that gives me an excuse to figure out how something works.
+
+            <p className="eyebrow">
+              {homePage.about.eyebrow}
             </p>
-            <div className="info-card">
-              <h3>Now looking for</h3>
-              <p>
-                Internship and research opportunities where I can develop my skills in
-                mechanical and aerospace engineering, while contributing to meaningful projects.
-              </p>
+
+            <h2>
+              {homePage.about.heading}
+            </h2>
+
+          </div>
+
+          <div className="about-grid">
+
+            <div>
+              {homePage.about.paragraphs.map(
+                (paragraph, index) => (
+                  <p key={index}>
+                    {paragraph}
+                  </p>
+                )
+              )}
             </div>
+
+            <div className="info-card">
+
+              <h3>
+                {homePage.about.card.title}
+              </h3>
+
+              <p>
+                {homePage.about.card.text}
+              </p>
+
+            </div>
+
           </div>
+
         </section>
 
-        {/* This is the skills section of the home page */}
+
+        {/* Skills */}
         <section className="section">
+
           <div className="section-heading">
-            <p className="eyebrow">Skills</p>
+
+            <p className="eyebrow">
+              {homePage.skills.eyebrow}
+            </p>
+
             <h2>
-              Core strengths that support modern engineering and product development.
+              {homePage.skills.heading}
             </h2>
+
           </div>
-          <SkillsTabs categories={skillCategories} />
+
+          <SkillsTabs
+            categories={skillCategories}
+          />
+
         </section>
 
-        {/* This is the highlights section of the home page */}
-        <section className="section">
-          <div className="section-heading">
-            <p className="eyebrow">Highlights</p>
-            <h2>Experiences in my life I'm proud of</h2>
-          </div>
 
-  <HighlightCarousel highlights={highlights} />
-</section>
-
-        {/* This is the projects section of the home page */}
+        {/* Highlights */}
         <section className="section">
+
           <div className="section-heading">
-            <p className="eyebrow">Selected Work</p>
+
+            <p className="eyebrow">
+              {homePage.highlights.eyebrow}
+            </p>
+
             <h2>
-              Projects that reflect how I think, design, and build.
+              {homePage.highlights.heading}
             </h2>
+
           </div>
+
+          <HighlightCarousel
+            highlights={highlights}
+          />
+
+        </section>
+
+
+        {/* Selected Work */}
+        <section className="section">
+
+          <div className="section-heading">
+
+            <p className="eyebrow">
+              {homePage.selectedWork.eyebrow}
+            </p>
+
+            <h2>
+              {homePage.selectedWork.heading}
+            </h2>
+
+          </div>
+
           <div className="card-grid">
-            {projects.map((project) => (
+
+            {homeProjects.map((project) => (
+
               <article
                 className="project-card"
-                key={project.title} >
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                key={project.title}
+              >
+
+                <h3>
+                  {project.title}
+                </h3>
+
+                <p>
+                  {project.description}
+                </p>
+
                 <div className="stack-list">
+
                   {project.stack.map((tech) => (
-                    <span key={tech}>{tech}</span>
+                    <span key={tech}>
+                      {tech}
+                    </span>
                   ))}
+
                 </div>
+
               </article>
+
             ))}
+
           </div>
+
         </section>
 
-        {/* This is the resume section of the home page */}
+
+        {/* Resume */}
         <section className="section resume-section">
+
           <div className="section-heading">
-            <p className="eyebrow">Resume</p>
+
+            <p className="eyebrow">
+              {homePage.resume.eyebrow}
+            </p>
+
             <h2>
-              A snapshot of my experience and skills.
+              {homePage.resume.heading}
             </h2>
+
           </div>
 
           <div className="resume-card">
+
             <img
               src={resumePreview}
-              alt="Nicholas Serwatowski Resume Preview"
+              alt={homePage.resume.previewAlt}
               className="resume-preview"
             />
 
             <div className="resume-actions">
+
               <a
                 className="button button-primary"
                 href={resumePDF}
                 download
               >
-                Download Resume
+                {homePage.resume.downloadText}
               </a>
+
             </div>
+
           </div>
+
         </section>
 
-        {/* This is the contact section of the home page */}
+
+        {/* Contact */}
         <section className="section contact-section">
+
           <div className="section-heading">
-            <p 
-            className="eyebrow">Contact
+
+            <p className="eyebrow">
+              {homePage.contact.eyebrow}
             </p>
+
             <h2>
-              Let's talk about how I can contribute to your team.
+              {homePage.contact.heading}
             </h2>
+
           </div>
+
           <div className="contact-card">
+
             <p>
-              I'm looking for internship and research opportunities where I can 
-              develop my skills in mechanical and aerospace engineering, 
-              while contributing to meaningful projects.
+              {homePage.contact.text}
             </p>
+
             <div className="hero-actions">
-              {/* This is the email button for the home page */}
+
               <a
                 className="button button-primary"
-                href="mailto:nick.serwatowski@gmail.com"
+                href={homePage.contact.email.link}
               >
-                Email Me
+                {homePage.contact.email.text}
               </a>
-              {/* This is the LinkedIn button for the home page */}
+
               <a
                 className="button button-secondary"
-                href="https://www.linkedin.com/in/nicholasserwatowski/"
+                href={homePage.contact.linkedin.link}
                 target="_blank"
                 rel="noreferrer"
               >
-                LinkedIn
+                {homePage.contact.linkedin.text}
               </a>
+
             </div>
+
           </div>
+
         </section>
-        
+
       </main>
     </>
   );
 }
 
-// Export the home page
 export default Home;

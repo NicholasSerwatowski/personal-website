@@ -4,7 +4,7 @@ import { featuredProjects } from "../../data/projects";
 const Featured = () => {
   return (
     <div className="projects-page">
-      <h1>Featured</h1>
+      <h1>Archive</h1>
 
       <div className="projects-grid">
         {featuredProjects.map((project) => (

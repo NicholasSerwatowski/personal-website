@@ -1,41 +1,32 @@
-/* Overall contact page settings */
-
 import ContactLink from "../components/contact/ContactLink";
-import linkedinImage from "../assets/linkedin.png";
-import githubImage from "../assets/github.png";
-import emailImage from "../assets/email.png";
+
+import { contactPage } from "../data/contact";
 
 function Contact() {
   return (
     <div className="section contact-section">
-      <h1>Contact</h1>
+
+      <h1>
+        {contactPage.title}
+      </h1>
 
       <p>
-        I'm always open to connecting, discussing engineering projects,
-        or talking about potential opportunities.
+        {contactPage.description}
       </p>
 
       <div className="contact-links">
 
-        <ContactLink
-          title="LinkedIn"
-          image={linkedinImage}
-          link="https://www.linkedin.com/in/nicholasserwatowski/"
-        />
-
-        <ContactLink
-          title="GitHub"
-          image={githubImage}
-          link="https://github.com/NicholasSerwatowski"
-        />
-
-        <ContactLink
-          title="Email"
-          image={emailImage}
-          link="mailto:nick.serwatowski@gmail.com"
-        />
+        {contactPage.links.map((contact) => (
+          <ContactLink
+            key={contact.title}
+            title={contact.title}
+            image={contact.image}
+            link={contact.link}
+          />
+        ))}
 
       </div>
+
     </div>
   );
 }
