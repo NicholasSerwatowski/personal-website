@@ -1,211 +1,285 @@
 import React from "react";
 
+import "../../styles/interests/photography.css";
+
+import { photographyPage } from "../../data/interests/photography";
+
 const Photography: React.FC = () => {
   return (
     <div className="photography-page">
+
+      {/* Header */}
       <header className="photography-header">
-        <h1>Photography</h1>
+        <h1>{photographyPage.title}</h1>
+
         <p>
-          Photography is a way for me to slow down, pay attention to my
-          surroundings, and capture moments that I find interesting.
+          {photographyPage.description}
         </p>
       </header>
 
+
       <main className="photography-content">
+
+        {/* Featured */}
         <section className="photography-section">
+
           <div className="section-heading">
-            <h2>Featured</h2>
-            <p>A selection of photographs I've taken.</p>
+            <h2>
+              {photographyPage.featured.title}
+            </h2>
+
+            <p>
+              {photographyPage.featured.description}
+            </p>
           </div>
 
           <div className="photo-grid featured-grid">
-            <article className="photo-card photo-large">
-              <div className="photo-placeholder">
-                <span>Featured Photo</span>
-              </div>
 
-              <div className="photo-caption">
-                <h3>Photograph Title</h3>
-                <p>Location · Date</p>
-              </div>
-            </article>
+            {photographyPage.featured.photos.map(
+              (photo, index) => (
+                <article
+                  className={`photo-card ${
+                    photo.featured ? "photo-large" : ""
+                  }`}
+                  key={index}
+                >
 
-            <article className="photo-card">
-              <div className="photo-placeholder">
-                <span>Photo</span>
-              </div>
+                  <div className="photo-placeholder">
 
-              <div className="photo-caption">
-                <h3>Photograph Title</h3>
-                <p>Location · Date</p>
-              </div>
-            </article>
+                    {photo.image ? (
+                      <img
+                        src={photo.image}
+                        alt={photo.title}
+                      />
+                    ) : (
+                      <span>
+                        {photo.featured
+                          ? "Featured Photo"
+                          : "Photo"}
+                      </span>
+                    )}
 
-            <article className="photo-card">
-              <div className="photo-placeholder">
-                <span>Photo</span>
-              </div>
+                  </div>
 
-              <div className="photo-caption">
-                <h3>Photograph Title</h3>
-                <p>Location · Date</p>
-              </div>
-            </article>
+                  <div className="photo-caption">
 
-            <article className="photo-card">
-              <div className="photo-placeholder">
-                <span>Photo</span>
-              </div>
+                    <h3>
+                      {photo.title}
+                    </h3>
 
-              <div className="photo-caption">
-                <h3>Photograph Title</h3>
-                <p>Location · Date</p>
-              </div>
-            </article>
+                    <p>
+                      {photo.location} · {photo.date}
+                    </p>
 
-            <article className="photo-card">
-              <div className="photo-placeholder">
-                <span>Photo</span>
-              </div>
+                  </div>
 
-              <div className="photo-caption">
-                <h3>Photograph Title</h3>
-                <p>Location · Date</p>
-              </div>
-            </article>
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
 
+
+        {/* Collections */}
         <section className="photography-section">
+
           <div className="section-heading">
-            <h2>Collections</h2>
+
+            <h2>
+              {photographyPage.collections.title}
+            </h2>
+
             <p>
-              Groups of photographs organized around a place, subject, or
-              experience.
+              {photographyPage.collections.description}
             </p>
+
           </div>
 
           <div className="collection-grid">
-            <article className="collection-card">
-              <div className="collection-placeholder">
-                <span>Cleveland</span>
-              </div>
 
-              <div className="collection-info">
-                <h3>Cleveland</h3>
-                <p>
-                  Architecture, streets, landmarks, and everyday moments from
-                  around Cleveland.
-                </p>
-                <span className="collection-count">0 photographs</span>
-              </div>
-            </article>
+            {photographyPage.collections.items.map(
+              (collection, index) => (
+                <article
+                  className="collection-card"
+                  key={index}
+                >
 
-            <article className="collection-card">
-              <div className="collection-placeholder">
-                <span>Travel</span>
-              </div>
+                  <div className="collection-placeholder">
 
-              <div className="collection-info">
-                <h3>Travel</h3>
-                <p>
-                  Photographs from places I've visited and experiences along
-                  the way.
-                </p>
-                <span className="collection-count">0 photographs</span>
-              </div>
-            </article>
+                    {collection.image ? (
+                      <img
+                        src={collection.image}
+                        alt={collection.title}
+                      />
+                    ) : (
+                      <span>
+                        {collection.title}
+                      </span>
+                    )}
 
-            <article className="collection-card">
-              <div className="collection-placeholder">
-                <span>Nature</span>
-              </div>
+                  </div>
 
-              <div className="collection-info">
-                <h3>Nature</h3>
-                <p>
-                  Landscapes, wildlife, weather, and other moments found
-                  outdoors.
-                </p>
-                <span className="collection-count">0 photographs</span>
-              </div>
-            </article>
+                  <div className="collection-info">
 
-            <article className="collection-card">
-              <div className="collection-placeholder">
-                <span>Architecture</span>
-              </div>
+                    <h3>
+                      {collection.title}
+                    </h3>
 
-              <div className="collection-info">
-                <h3>Architecture</h3>
-                <p>
-                  Buildings, structures, and interesting examples of design and
-                  construction.
-                </p>
-                <span className="collection-count">0 photographs</span>
-              </div>
-            </article>
+                    <p>
+                      {collection.description}
+                    </p>
+
+                    <span className="collection-count">
+                      {collection.count} photographs
+                    </span>
+
+                  </div>
+
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
 
+
+        {/* Behind the Photograph */}
         <section className="photography-section">
+
           <div className="section-heading">
-            <h2>Behind the Photograph</h2>
+
+            <h2>
+              {photographyPage.behindThePhotograph.title}
+            </h2>
+
             <p>
-              A closer look at some of my favorite photographs and the stories
-              behind them.
+              {photographyPage.behindThePhotograph.description}
             </p>
+
           </div>
 
           <article className="featured-story">
+
             <div className="story-image">
+
               <div className="photo-placeholder">
-                <span>Photograph</span>
+
+                {photographyPage.behindThePhotograph.photo.image ? (
+                  <img
+                    src={
+                      photographyPage.behindThePhotograph.photo.image
+                    }
+                    alt={
+                      photographyPage.behindThePhotograph.photo.title
+                    }
+                  />
+                ) : (
+                  <span>
+                    Photograph
+                  </span>
+                )}
+
               </div>
+
             </div>
+
 
             <div className="story-content">
-              <h3>Photograph Title</h3>
 
-              <p className="story-location">Location · Date</p>
+              <h3>
+                {photographyPage.behindThePhotograph.photo.title}
+              </h3>
 
-              <p>
-                This photograph was taken because something about the scene
-                caught my attention. This space can be used to explain what
-                made the photograph interesting, what was happening when it
-                was taken, or why it has become meaningful to me.
+              <p className="story-location">
+                {
+                  photographyPage.behindThePhotograph.photo
+                    .location
+                }
+                {" · "}
+                {
+                  photographyPage.behindThePhotograph.photo
+                    .date
+                }
               </p>
 
+              <p>
+                {
+                  photographyPage.behindThePhotograph.photo
+                    .story
+                }
+              </p>
+
+
               <div className="photo-details">
-                <div>
-                  <span className="detail-label">Camera</span>
-                  <span>Camera Name</span>
-                </div>
 
                 <div>
-                  <span className="detail-label">Lens</span>
-                  <span>Lens Name</span>
+                  <span className="detail-label">
+                    Camera
+                  </span>
+
+                  <span>
+                    {
+                      photographyPage.behindThePhotograph.photo
+                        .details.camera
+                    }
+                  </span>
                 </div>
 
+
                 <div>
-                  <span className="detail-label">Settings</span>
-                  <span>ƒ/2.8 · 1/250 · ISO 400</span>
+                  <span className="detail-label">
+                    Lens
+                  </span>
+
+                  <span>
+                    {
+                      photographyPage.behindThePhotograph.photo
+                        .details.lens
+                    }
+                  </span>
                 </div>
+
+
+                <div>
+                  <span className="detail-label">
+                    Settings
+                  </span>
+
+                  <span>
+                    {
+                      photographyPage.behindThePhotograph.photo
+                        .details.settings
+                    }
+                  </span>
+                </div>
+
               </div>
+
             </div>
+
           </article>
+
         </section>
 
+
+        {/* Closing */}
         <section className="photography-closing">
-          <h2>Seeing the World Differently</h2>
+
+          <h2>
+            {photographyPage.closing.title}
+          </h2>
+
           <p>
-            Photography encourages me to notice details that I might otherwise
-            overlook. Whether I'm traveling somewhere new or walking through a
-            familiar place, I enjoy looking for interesting perspectives,
-            patterns, and moments worth remembering.
+            {photographyPage.closing.description}
           </p>
+
         </section>
+
       </main>
+
     </div>
   );
 };

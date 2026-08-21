@@ -1,286 +1,280 @@
 import React from "react";
 
+import "../../styles/interests/music.css";
+
+import { musicPage } from "../../data/interests/music";
+
 const Music: React.FC = () => {
   return (
     <div className="music-page">
+
       {/* Header */}
       <header className="music-header">
-        <h1>Music</h1>
+        <h1>{musicPage.title}</h1>
+
         <p>
-          Music has always been a part of how I spend my time, whether I'm
-          listening to something new, returning to an old favorite, or simply
-          putting something on in the background while I work.
+          {musicPage.description}
         </p>
       </header>
 
+
       <main className="music-content">
+
         {/* Currently Listening */}
         <section className="music-section">
+
           <div className="section-heading">
-            <h2>Currently Listening</h2>
-            <p>A few things that have been in rotation lately.</p>
+            <h2>
+              {musicPage.currentlyListening.title}
+            </h2>
+
+            <p>
+              {musicPage.currentlyListening.description}
+            </p>
           </div>
 
           <div className="album-grid">
-            <article className="album-card">
-              <div className="album-cover">
-                <span>Album Cover</span>
-              </div>
 
-              <div className="album-info">
-                <h3>Album Name</h3>
-                <p>Artist Name</p>
-                <span>2026</span>
-              </div>
-            </article>
+            {musicPage.currentlyListening.albums.map(
+              (album, index) => (
+                <article
+                  className="album-card"
+                  key={index}
+                >
 
-            <article className="album-card">
-              <div className="album-cover">
-                <span>Album Cover</span>
-              </div>
+                  <div className="album-cover">
 
-              <div className="album-info">
-                <h3>Album Name</h3>
-                <p>Artist Name</p>
-                <span>2026</span>
-              </div>
-            </article>
+                    {album.cover ? (
+                      <img
+                        src={album.cover}
+                        alt={`${album.title} album cover`}
+                      />
+                    ) : (
+                      <span>Album Cover</span>
+                    )}
 
-            <article className="album-card">
-              <div className="album-cover">
-                <span>Album Cover</span>
-              </div>
+                  </div>
 
-              <div className="album-info">
-                <h3>Album Name</h3>
-                <p>Artist Name</p>
-                <span>2026</span>
-              </div>
-            </article>
+                  <div className="album-info">
 
-            <article className="album-card">
-              <div className="album-cover">
-                <span>Album Cover</span>
-              </div>
+                    <h3>
+                      {album.title}
+                    </h3>
 
-              <div className="album-info">
-                <h3>Album Name</h3>
-                <p>Artist Name</p>
-                <span>2026</span>
-              </div>
-            </article>
+                    <p>
+                      {album.artist}
+                    </p>
+
+                    <span>
+                      {album.year}
+                    </span>
+
+                  </div>
+
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Favorite Artists */}
         <section className="music-section">
+
           <div className="section-heading">
-            <h2>Favorite Artists</h2>
+            <h2>
+              {musicPage.favoriteArtists.title}
+            </h2>
+
             <p>
-              Artists and bands whose music I keep coming back to.
+              {musicPage.favoriteArtists.description}
             </p>
           </div>
 
           <div className="artist-list">
-            <article className="artist-card">
-              <div className="artist-number">01</div>
-              <div>
-                <h3>Artist Name</h3>
-                <p>Genre · Favorite song</p>
-              </div>
-            </article>
 
-            <article className="artist-card">
-              <div className="artist-number">02</div>
-              <div>
-                <h3>Artist Name</h3>
-                <p>Genre · Favorite song</p>
-              </div>
-            </article>
+            {musicPage.favoriteArtists.artists.map(
+              (artist, index) => (
+                <article
+                  className="artist-card"
+                  key={index}
+                >
 
-            <article className="artist-card">
-              <div className="artist-number">03</div>
-              <div>
-                <h3>Artist Name</h3>
-                <p>Genre · Favorite song</p>
-              </div>
-            </article>
+                  <div className="artist-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
 
-            <article className="artist-card">
-              <div className="artist-number">04</div>
-              <div>
-                <h3>Artist Name</h3>
-                <p>Genre · Favorite song</p>
-              </div>
-            </article>
+                  <div>
+                    <h3>
+                      {artist.name}
+                    </h3>
 
-            <article className="artist-card">
-              <div className="artist-number">05</div>
-              <div>
-                <h3>Artist Name</h3>
-                <p>Genre · Favorite song</p>
-              </div>
-            </article>
+                    <p>
+                      {artist.genre} · {artist.favoriteSong}
+                    </p>
+                  </div>
 
-            <article className="artist-card">
-              <div className="artist-number">06</div>
-              <div>
-                <h3>Artist Name</h3>
-                <p>Genre · Favorite song</p>
-              </div>
-            </article>
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Genres */}
         <section className="music-section">
+
           <div className="section-heading">
-            <h2>What I Listen To</h2>
+            <h2>
+              {musicPage.genres.title}
+            </h2>
+
             <p>
-              My taste is pretty broad, but these are some of the styles I
-              tend to gravitate toward.
+              {musicPage.genres.description}
             </p>
           </div>
 
           <div className="genre-grid">
-            <div className="genre-card">
-              <h3>Rock</h3>
-              <p>Classic and modern rock.</p>
-            </div>
 
-            <div className="genre-card">
-              <h3>Alternative</h3>
-              <p>Alternative and indie music.</p>
-            </div>
+            {musicPage.genres.genres.map(
+              (genre, index) => (
+                <div
+                  className="genre-card"
+                  key={index}
+                >
 
-            <div className="genre-card">
-              <h3>Electronic</h3>
-              <p>Electronic music and experimental sounds.</p>
-            </div>
+                  <h3>
+                    {genre.name}
+                  </h3>
 
-            <div className="genre-card">
-              <h3>Classical</h3>
-              <p>Orchestral and instrumental music.</p>
-            </div>
+                  <p>
+                    {genre.description}
+                  </p>
 
-            <div className="genre-card">
-              <h3>Jazz</h3>
-              <p>Jazz and improvisational music.</p>
-            </div>
+                </div>
+              )
+            )}
 
-            <div className="genre-card">
-              <h3>Other</h3>
-              <p>Anything interesting enough to catch my attention.</p>
-            </div>
           </div>
+
         </section>
 
-        {/* Songs */}
+
+        {/* Favorite Songs */}
         <section className="music-section">
+
           <div className="section-heading">
-            <h2>Favorite Songs</h2>
+            <h2>
+              {musicPage.favoriteSongs.title}
+            </h2>
+
             <p>
-              Individual songs that have stuck with me for one reason or
-              another.
+              {musicPage.favoriteSongs.description}
             </p>
           </div>
 
           <div className="song-list">
-            <article className="song-item">
-              <span className="song-number">01</span>
 
-              <div className="song-info">
-                <h3>Song Title</h3>
-                <p>Artist Name · Album Name</p>
-              </div>
+            {musicPage.favoriteSongs.songs.map(
+              (song, index) => (
+                <article
+                  className="song-item"
+                  key={index}
+                >
 
-              <span className="song-duration">3:42</span>
-            </article>
+                  <span className="song-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-            <article className="song-item">
-              <span className="song-number">02</span>
+                  <div className="song-info">
 
-              <div className="song-info">
-                <h3>Song Title</h3>
-                <p>Artist Name · Album Name</p>
-              </div>
+                    <h3>
+                      {song.title}
+                    </h3>
 
-              <span className="song-duration">4:15</span>
-            </article>
+                    <p>
+                      {song.artist} · {song.album}
+                    </p>
 
-            <article className="song-item">
-              <span className="song-number">03</span>
+                  </div>
 
-              <div className="song-info">
-                <h3>Song Title</h3>
-                <p>Artist Name · Album Name</p>
-              </div>
+                  <span className="song-duration">
+                    {song.duration}
+                  </span>
 
-              <span className="song-duration">3:28</span>
-            </article>
+                </article>
+              )
+            )}
 
-            <article className="song-item">
-              <span className="song-number">04</span>
-
-              <div className="song-info">
-                <h3>Song Title</h3>
-                <p>Artist Name · Album Name</p>
-              </div>
-
-              <span className="song-duration">5:01</span>
-            </article>
-
-            <article className="song-item">
-              <span className="song-number">05</span>
-
-              <div className="song-info">
-                <h3>Song Title</h3>
-                <p>Artist Name · Album Name</p>
-              </div>
-
-              <span className="song-duration">2:57</span>
-            </article>
           </div>
+
         </section>
+
 
         {/* Music in My Life */}
         <section className="music-section">
+
           <div className="music-story">
+
             <div className="music-story-content">
-              <span className="story-label">PERSONAL</span>
 
-              <h2>Music in My Life</h2>
+              <span className="story-label">
+                {musicPage.personalStory.label}
+              </span>
 
-              <p>
-                Music has been a constant part of my life. I enjoy discovering
-                new artists and genres, but I also appreciate having a handful
-                of familiar songs and albums that I can always return to.
-              </p>
+              <h2>
+                {musicPage.personalStory.title}
+              </h2>
 
-              <p>
-                This section could eventually become a more personal story
-                about how I got into music, memorable concerts, learning an
-                instrument, making music, or the role music plays in my
-                everyday life.
-              </p>
+              {musicPage.personalStory.paragraphs.map(
+                (paragraph, index) => (
+                  <p key={index}>
+                    {paragraph}
+                  </p>
+                )
+              )}
+
             </div>
 
             <div className="music-story-placeholder">
-              <span>Photo / Concert / Instrument</span>
+
+              {musicPage.personalStory.image ? (
+                <img
+                  src={musicPage.personalStory.image}
+                  alt="Music"
+                />
+              ) : (
+                <span>
+                  {musicPage.personalStory.imagePlaceholder}
+                </span>
+              )}
+
             </div>
+
           </div>
+
         </section>
+
 
         {/* Closing */}
         <section className="music-closing">
-          <h2>Always Looking for Something New</h2>
+
+          <h2>
+            {musicPage.closing.title}
+          </h2>
 
           <p>
-            My music taste is constantly changing. There's always another
-            artist, album, or song worth discovering.
+            {musicPage.closing.description}
           </p>
+
         </section>
+
       </main>
+
     </div>
   );
 };

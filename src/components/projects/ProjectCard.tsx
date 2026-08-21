@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -12,7 +14,7 @@ const ProjectCard = ({
   path,
 }: ProjectCardProps) => {
   return (
-    <a href={path} className="project-card">
+    <Link to={path} className="project-card">
       <img src={image} alt={title} />
 
       <div className="project-card-content">
@@ -20,7 +22,7 @@ const ProjectCard = ({
         <p>{description}</p>
         <span>View Project →</span>
       </div>
-    </a>
+    </Link>
   );
 };
 

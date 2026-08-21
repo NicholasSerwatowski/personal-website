@@ -1,5 +1,5 @@
 import ProjectCard from "../../components/projects/ProjectCard";
-import { featuredProjects } from "../../data/projects";
+import { featuredProjects } from "../../data/projects/featured";
 
 const Featured = () => {
   return (

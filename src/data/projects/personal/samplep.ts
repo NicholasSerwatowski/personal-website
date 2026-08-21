@@ -5,13 +5,13 @@ export const sampleP = {
 
   title: "Project Name",
 
-  category: "Archive",
+  category: "Personal",
 
   description: "Project Description",
 
   image: cwruImage,
 
-  path: "/personal-website/projects/archive/samplep",
+  path: "/personal-website/projects/personal/samplep",
 
   meta: {
     type: "Project Type",

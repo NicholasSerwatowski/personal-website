@@ -1,5 +1,5 @@
 import ProjectCard from "../../components/projects/ProjectCard";
-import { personalProjects } from "../../data/projects";
+import { personalProjects } from "../../data/projects/personal";
 
 const Personal = () => {
   return (

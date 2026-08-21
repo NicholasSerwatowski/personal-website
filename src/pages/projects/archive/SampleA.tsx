@@ -1,5 +1,5 @@
 import ProjectGallery from "../../../components/projects/ProjectGallery";
-import cwruImage from "../../../assets/cwru.jpg";
+import { sampleA } from "../../../data/projects/archive/samplea";
 
 const SampleA = () => {
   return (
@@ -7,43 +7,64 @@ const SampleA = () => {
 
       {/* Project Header */}
       <header className="project-detail-header">
+
         <div className="project-detail-title">
-          <h1>Project Name</h1>
+          <h1>{sampleA.title}</h1>
 
           <p>
-            Project Description
+            {sampleA.description}
           </p>
         </div>
 
         <div className="project-detail-hero">
           <img
-            src={cwruImage}
-            alt="Sample A project"
+            src={sampleA.image}
+            alt={sampleA.title}
           />
         </div>
 
         <div className="project-detail-meta">
+
           <div className="project-meta-item">
-            <span className="project-meta-label">Project Type</span>
-            <span className="project-meta-value">
+            <span className="project-meta-label">
               Project Type
+            </span>
+
+            <span className="project-meta-value">
+              {sampleA.meta.type}
             </span>
           </div>
 
           <div className="project-meta-item">
-            <span className="project-meta-label">Date</span>
-            <span className="project-meta-value">Date</span>
+            <span className="project-meta-label">
+              Date
+            </span>
+
+            <span className="project-meta-value">
+              {sampleA.meta.date}
+            </span>
           </div>
 
           <div className="project-meta-item">
-            <span className="project-meta-label">Role</span>
-            <span className="project-meta-value">Role</span>
+            <span className="project-meta-label">
+              Role
+            </span>
+
+            <span className="project-meta-value">
+              {sampleA.meta.role}
+            </span>
           </div>
 
           <div className="project-meta-item">
-            <span className="project-meta-label">Organization</span>
-            <span className="project-meta-value">Organization</span>
+            <span className="project-meta-label">
+              Organization
+            </span>
+
+            <span className="project-meta-value">
+              {sampleA.meta.organization}
+            </span>
           </div>
+
         </div>
       </header>
 
@@ -52,13 +73,11 @@ const SampleA = () => {
       <section className="project-detail-section">
         <h2>Overview</h2>
 
-        <p>
-          Project Overview
-        </p>
-
-        <p>
-          Project Overview Extended
-        </p>
+        {sampleA.overview.map((paragraph, index) => (
+          <p key={index}>
+            {paragraph}
+          </p>
+        ))}
       </section>
 
 
@@ -67,60 +86,39 @@ const SampleA = () => {
         <h2>My Contributions</h2>
 
         <ul>
-          <li>
-            Contribution 1
-          </li>
-
-          <li>
-            Contribution 2
-          </li>
-
-          <li>
-            Contribution 3
-          </li>
-
-          <li>
-            Contribution 4
-          </li>
+          {sampleA.contributions.map((contribution, index) => (
+            <li key={index}>
+              {contribution}
+            </li>
+          ))}
         </ul>
       </section>
 
 
-      {/* Engineering */}
+      {/* Details */}
       <section className="project-detail-section">
         <h2>Details</h2>
 
-        <p>
-          Specific Details
-        </p>
-
-        <p>
-          Specific Details Extended
-        </p>
-
-        <div className="project-detail-subsection">
-          <h3>Project Step 1</h3>
-
-          <p>
-            Description
+        {sampleA.details.paragraphs.map((paragraph, index) => (
+          <p key={index}>
+            {paragraph}
           </p>
-        </div>
+        ))}
 
-        <div className="project-detail-subsection">
-          <h3>Project Step 2</h3>
+        {sampleA.details.subsections.map((subsection, index) => (
+          <div
+            className="project-detail-subsection"
+            key={index}
+          >
+            <h3>
+              {subsection.title}
+            </h3>
 
-          <p>
-            Description
-          </p>
-        </div>
-
-        <div className="project-detail-subsection">
-          <h3>Project Step 3</h3>
-
-          <p>
-            Description
-          </p>
-        </div>
+            <p>
+              {subsection.description}
+            </p>
+          </div>
+        ))}
       </section>
 
 
@@ -128,52 +126,34 @@ const SampleA = () => {
       <section className="project-detail-section">
         <h2>Results</h2>
 
-        <p>
-          Description
-        </p>
-
-        <p>
-          Description Extended
-        </p>
+        {sampleA.results.map((paragraph, index) => (
+          <p key={index}>
+            {paragraph}
+          </p>
+        ))}
       </section>
 
 
       {/* Gallery */}
       <section className="project-detail-section">
-  <h2>Gallery</h2>
+        <h2>Gallery</h2>
 
-  <ProjectGallery
-    images={[
-      {
-        src: cwruImage,
-        title: "Title",
-        description:
-          "Description",
-      },
-      {
-        src: cwruImage,
-        title: "Title",
-        description:
-          "Description",
-      },
-      {
-        src: cwruImage,
-        title: "Title",
-        description:
-          "Description",
-      },
-    ]}
-  />
-</section>
+        <ProjectGallery
+          images={sampleA.gallery}
+        />
+      </section>
 
 
-      {/* Technologies / Skills */}
+      {/* Skills */}
       <section className="project-detail-section">
         <h2>Skills</h2>
 
         <div className="project-skills">
-          <span>Skill 1</span>
-          <span>Skill 2</span>
+          {sampleA.skills.map((skill, index) => (
+            <span key={index}>
+              {skill}
+            </span>
+          ))}
         </div>
       </section>
 

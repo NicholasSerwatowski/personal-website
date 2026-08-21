@@ -1,5 +1,5 @@
 import ProjectCard from "../../components/projects/ProjectCard";
-import { archiveProjects } from "../../data/projects";
+import { archiveProjects } from "../../data/projects/archive";
 
 const Archive = () => {
   return (

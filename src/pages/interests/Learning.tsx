@@ -1,279 +1,245 @@
 import React from "react";
 
+import "../../styles/interests/learning.css";
+
+import { learningPage } from "../../data/interests/learning";
+
 const Learning: React.FC = () => {
   return (
     <div className="learning-page">
+
+      {/* Header */}
       <header className="learning-header">
-        <h1>Learning</h1>
+        <h1>{learningPage.title}</h1>
+
         <p>
-          I'm naturally curious and enjoy learning about subjects that help me
-          understand how things work, solve problems, and see the world from
-          different perspectives.
+          {learningPage.description}
         </p>
       </header>
 
+
       <main className="learning-content">
+
         {/* Currently Learning */}
         <section className="learning-section">
+
           <div className="section-heading">
-            <h2>Currently Learning</h2>
+            <h2>
+              {learningPage.currentlyLearning.title}
+            </h2>
+
             <p>
-              Subjects and skills that I'm actively exploring right now.
+              {learningPage.currentlyLearning.description}
             </p>
           </div>
 
           <div className="learning-grid">
-            <article className="learning-card">
-              <div className="learning-card-number">01</div>
 
-              <div className="learning-card-content">
-                <h3>Topic or Skill</h3>
-                <span className="learning-category">Engineering</span>
+            {learningPage.currentlyLearning.topics.map(
+              (topic, index) => (
+                <article
+                  className="learning-card"
+                  key={index}
+                >
 
-                <p>
-                  A short description of what I'm currently learning and why
-                  I've decided to explore it.
-                </p>
-
-                <div className="learning-progress">
-                  <div className="progress-label">
-                    <span>Progress</span>
-                    <span>In Progress</span>
+                  <div className="learning-card-number">
+                    {String(index + 1).padStart(2, "0")}
                   </div>
 
-                  <div className="progress-bar">
-                    <div className="progress-fill" />
-                  </div>
-                </div>
-              </div>
-            </article>
+                  <div className="learning-card-content">
 
-            <article className="learning-card">
-              <div className="learning-card-number">02</div>
+                    <h3>
+                      {topic.title}
+                    </h3>
 
-              <div className="learning-card-content">
-                <h3>Topic or Skill</h3>
-                <span className="learning-category">Programming</span>
+                    <span className="learning-category">
+                      {topic.category}
+                    </span>
 
-                <p>
-                  A short description of what I'm currently learning and why
-                  I've decided to explore it.
-                </p>
+                    <p>
+                      {topic.description}
+                    </p>
 
-                <div className="learning-progress">
-                  <div className="progress-label">
-                    <span>Progress</span>
-                    <span>In Progress</span>
-                  </div>
+                    <div className="learning-progress">
 
-                  <div className="progress-bar">
-                    <div className="progress-fill" />
-                  </div>
-                </div>
-              </div>
-            </article>
+                      <div className="progress-label">
+                        <span>Progress</span>
 
-            <article className="learning-card">
-              <div className="learning-card-number">03</div>
+                        <span>
+                          {topic.progress}
+                        </span>
+                      </div>
 
-              <div className="learning-card-content">
-                <h3>Topic or Skill</h3>
-                <span className="learning-category">Personal</span>
+                      <div className="progress-bar">
+                        <div className="progress-fill" />
+                      </div>
 
-                <p>
-                  A short description of what I'm currently learning and why
-                  I've decided to explore it.
-                </p>
+                    </div>
 
-                <div className="learning-progress">
-                  <div className="progress-label">
-                    <span>Progress</span>
-                    <span>In Progress</span>
                   </div>
 
-                  <div className="progress-bar">
-                    <div className="progress-fill" />
-                  </div>
-                </div>
-              </div>
-            </article>
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Areas of Interest */}
         <section className="learning-section">
+
           <div className="section-heading">
-            <h2>Areas of Interest</h2>
+            <h2>
+              {learningPage.areasOfInterest.title}
+            </h2>
+
             <p>
-              Subjects that I frequently find myself reading, researching, or
-              experimenting with.
+              {learningPage.areasOfInterest.description}
             </p>
           </div>
 
           <div className="interest-grid">
-            <article className="interest-card">
-              <div className="interest-icon">⚙</div>
-              <h3>Engineering</h3>
-              <p>
-                Mechanical design, manufacturing, robotics, materials, and
-                practical engineering.
-              </p>
-            </article>
 
-            <article className="interest-card">
-              <div className="interest-icon">💻</div>
-              <h3>Programming</h3>
-              <p>
-                Software, automation, data analysis, and using code to solve
-                engineering problems.
-              </p>
-            </article>
+            {learningPage.areasOfInterest.areas.map(
+              (area, index) => (
+                <article
+                  className="interest-card"
+                  key={index}
+                >
 
-            <article className="interest-card">
-              <div className="interest-icon">🔬</div>
-              <h3>Science</h3>
-              <p>
-                Physics, mathematics, and the scientific ideas behind the
-                systems I encounter.
-              </p>
-            </article>
+                  <div className="interest-icon">
+                    {area.icon}
+                  </div>
 
-            <article className="interest-card">
-              <div className="interest-icon">🌎</div>
-              <h3>History</h3>
-              <p>
-                Learning how people, technologies, organizations, and societies
-                have developed over time.
-              </p>
-            </article>
+                  <h3>
+                    {area.title}
+                  </h3>
 
-            <article className="interest-card">
-              <div className="interest-icon">💡</div>
-              <h3>Design</h3>
-              <p>
-                Understanding how thoughtful design can make products, systems,
-                and experiences better.
-              </p>
-            </article>
+                  <p>
+                    {area.description}
+                  </p>
 
-            <article className="interest-card">
-              <div className="interest-icon">🧠</div>
-              <h3>Ideas</h3>
-              <p>
-                Philosophy, psychology, decision-making, and other subjects
-                that challenge how I think.
-              </p>
-            </article>
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Learning Through Projects */}
         <section className="learning-section">
+
           <div className="section-heading">
-            <h2>Learning Through Projects</h2>
+            <h2>
+              {learningPage.learningThroughProjects.title}
+            </h2>
+
             <p>
-              Some of the things I've learned by building, testing, and
-              figuring things out for myself.
+              {learningPage.learningThroughProjects.description}
             </p>
           </div>
 
           <div className="learning-timeline">
-            <article className="timeline-item">
-              <div className="timeline-marker">01</div>
 
-              <div className="timeline-content">
-                <span className="timeline-category">Project</span>
-                <h3>Project Name</h3>
+            {learningPage.learningThroughProjects.projects.map(
+              (project, index) => (
+                <article
+                  className="timeline-item"
+                  key={index}
+                >
 
-                <p>
-                  A short explanation of the project and what it taught me.
-                  Focus on the knowledge or skills gained rather than simply
-                  describing the project itself.
-                </p>
-              </div>
-            </article>
+                  <div className="timeline-marker">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
 
-            <article className="timeline-item">
-              <div className="timeline-marker">02</div>
+                  <div className="timeline-content">
 
-              <div className="timeline-content">
-                <span className="timeline-category">Project</span>
-                <h3>Project Name</h3>
+                    <span className="timeline-category">
+                      {project.category}
+                    </span>
 
-                <p>
-                  A short explanation of the project and what it taught me.
-                  Focus on the knowledge or skills gained rather than simply
-                  describing the project itself.
-                </p>
-              </div>
-            </article>
+                    <h3>
+                      {project.title}
+                    </h3>
 
-            <article className="timeline-item">
-              <div className="timeline-marker">03</div>
+                    <p>
+                      {project.description}
+                    </p>
 
-              <div className="timeline-content">
-                <span className="timeline-category">Project</span>
-                <h3>Project Name</h3>
+                  </div>
 
-                <p>
-                  A short explanation of the project and what it taught me.
-                  Focus on the knowledge or skills gained rather than simply
-                  describing the project itself.
-                </p>
-              </div>
-            </article>
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Resources */}
         <section className="learning-section">
+
           <div className="section-heading">
-            <h2>Resources I Use</h2>
+            <h2>
+              {learningPage.resources.title}
+            </h2>
+
             <p>
-              Books, courses, websites, and other resources that have helped me
-              learn.
+              {learningPage.resources.description}
             </p>
           </div>
 
           <div className="resource-grid">
-            <a href="#" className="resource-card">
-              <span className="resource-type">BOOK</span>
-              <h3>Resource Name</h3>
-              <p>Author or creator</p>
-            </a>
 
-            <a href="#" className="resource-card">
-              <span className="resource-type">COURSE</span>
-              <h3>Resource Name</h3>
-              <p>Platform or instructor</p>
-            </a>
+            {learningPage.resources.items.map(
+              (resource, index) => (
+                <a
+                  href={resource.link}
+                  className="resource-card"
+                  key={index}
+                >
 
-            <a href="#" className="resource-card">
-              <span className="resource-type">WEBSITE</span>
-              <h3>Resource Name</h3>
-              <p>Website or organization</p>
-            </a>
+                  <span className="resource-type">
+                    {resource.type}
+                  </span>
 
-            <a href="#" className="resource-card">
-              <span className="resource-type">OTHER</span>
-              <h3>Resource Name</h3>
-              <p>Creator or organization</p>
-            </a>
+                  <h3>
+                    {resource.title}
+                  </h3>
+
+                  <p>
+                    {resource.creator}
+                  </p>
+
+                </a>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Learning Philosophy */}
         <section className="learning-philosophy">
-          <h2>Learn. Build. Break. Understand.</h2>
+
+          <h2>
+            {learningPage.philosophy.title}
+          </h2>
 
           <p>
-            I learn best by putting ideas into practice. Whenever possible, I
-            like to move beyond simply reading about something and actually
-            build, test, experiment, or take something apart to understand how
-            it works.
+            {learningPage.philosophy.description}
           </p>
+
         </section>
+
       </main>
+
     </div>
   );
 };

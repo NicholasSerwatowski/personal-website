@@ -1,34 +1,21 @@
-import cwruImage from "../assets/cwru.jpg";
+import archiveImage from "../assets/ocm.png";
+import featuredImage from "../assets/cwru.jpg";
+import personalImage from "../assets/plhs.png";
 
-export const archiveProjects = [
+export const projectCategories = [
   {
-    id: "sample-a",
-    title: "Sample A",
-    category: "Archive",
-    description: "A sample project demonstrating the project archive layout.",
-    image: cwruImage,
-    path: "/personal-website/projects/archive/samplea",
+    title: "Archive",
+    path: "/personal-website/projects/archive",
+    image: archiveImage,
   },
-];
-
-export const personalProjects = [
   {
-    id: "sample-p",
-    title: "Sample P",
-    category: "Personal",
-    description: "A sample project demonstrating the project personal layout.",
-    image: cwruImage,
-    path: "/personal-website/projects/personal/samplep",
+    title: "Featured",
+    path: "/personal-website/projects/featured",
+    image: featuredImage,
   },
-];
-
-export const featuredProjects = [
   {
-    id: "sample-f",
-    title: "Sample F",
-    category: "Featured",
-    description: "A sample project demonstrating the project featured layout.",
-    image: cwruImage,
-    path: "/personal-website/projects/featured/samplef",
+    title: "Personal",
+    path: "/personal-website/projects/personal",
+    image: personalImage,
   },
 ];

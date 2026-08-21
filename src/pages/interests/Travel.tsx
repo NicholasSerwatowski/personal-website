@@ -1,314 +1,277 @@
 import React from "react";
 
+import "../../styles/interests/travel.css";
+
+import { travelPage } from "../../data/interests/travel";
+
 const Travel: React.FC = () => {
   return (
     <div className="travel-page">
+
       {/* Header */}
       <header className="travel-header">
-        <h1>Travel</h1>
+        <h1>{travelPage.title}</h1>
+
         <p>
-          I enjoy exploring new places, experiencing different environments,
-          and finding the interesting details that make each place unique.
+          {travelPage.description}
         </p>
       </header>
 
+
       <main className="travel-content">
+
         {/* Places Visited */}
         <section className="travel-section">
+
           <div className="section-heading">
-            <h2>Places I've Visited</h2>
+
+            <h2>
+              {travelPage.placesVisited.title}
+            </h2>
+
             <p>
-              Some of the places I've had the opportunity to explore.
+              {travelPage.placesVisited.description}
             </p>
+
           </div>
+
 
           <div className="destination-grid">
-            <article className="destination-card destination-large">
-              <div className="destination-image">
-                <span>Photo</span>
-              </div>
 
-              <div className="destination-info">
-                <span className="destination-location">
-                  United States
-                </span>
-                <h3>Cleveland, Ohio</h3>
-                <p>
-                  A place I've come to know well while studying at Case Western
-                  Reserve University.
-                </p>
-              </div>
-            </article>
+            {travelPage.placesVisited.destinations.map(
+              (destination, index) => (
+                <article
+                  key={index}
+                  className={`destination-card ${
+                    destination.featured
+                      ? "destination-large"
+                      : ""
+                  }`}
+                >
 
-            <article className="destination-card">
-              <div className="destination-image">
-                <span>Photo</span>
-              </div>
+                  <div className="destination-image">
 
-              <div className="destination-info">
-                <span className="destination-location">
-                  State / Country
-                </span>
-                <h3>Place Name</h3>
-                <p>
-                  A short description of the trip or what made this place
-                  memorable.
-                </p>
-              </div>
-            </article>
+                    {destination.image ? (
+                      <img
+                        src={destination.image}
+                        alt={destination.name}
+                      />
+                    ) : (
+                      <span>
+                        Photo
+                      </span>
+                    )}
 
-            <article className="destination-card">
-              <div className="destination-image">
-                <span>Photo</span>
-              </div>
+                  </div>
 
-              <div className="destination-info">
-                <span className="destination-location">
-                  State / Country
-                </span>
-                <h3>Place Name</h3>
-                <p>
-                  A short description of the trip or what made this place
-                  memorable.
-                </p>
-              </div>
-            </article>
 
-            <article className="destination-card">
-              <div className="destination-image">
-                <span>Photo</span>
-              </div>
+                  <div className="destination-info">
 
-              <div className="destination-info">
-                <span className="destination-location">
-                  State / Country
-                </span>
-                <h3>Place Name</h3>
-                <p>
-                  A short description of the trip or what made this place
-                  memorable.
-                </p>
-              </div>
-            </article>
+                    <span className="destination-location">
+                      {destination.country}
+                    </span>
 
-            <article className="destination-card">
-              <div className="destination-image">
-                <span>Photo</span>
-              </div>
+                    <h3>
+                      {destination.name}
+                    </h3>
 
-              <div className="destination-info">
-                <span className="destination-location">
-                  State / Country
-                </span>
-                <h3>Place Name</h3>
-                <p>
-                  A short description of the trip or what made this place
-                  memorable.
-                </p>
-              </div>
-            </article>
+                    <p>
+                      {destination.description}
+                    </p>
+
+                  </div>
+
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Favorite Trips */}
         <section className="travel-section">
+
           <div className="section-heading">
-            <h2>Favorite Trips</h2>
+
+            <h2>
+              {travelPage.favoriteTrips.title}
+            </h2>
+
             <p>
-              Trips and experiences that have stood out to me.
+              {travelPage.favoriteTrips.description}
             </p>
+
           </div>
+
 
           <div className="trip-list">
-            <article className="trip-card">
-              <div className="trip-number">01</div>
 
-              <div className="trip-image">
-                <span>Trip Photo</span>
-              </div>
+            {travelPage.favoriteTrips.trips.map(
+              (trip, index) => (
+                <article
+                  className="trip-card"
+                  key={index}
+                >
 
-              <div className="trip-info">
-                <span className="trip-date">MONTH · YEAR</span>
-                <h3>Trip Name</h3>
-                <p className="trip-location">
-                  Location
-                </p>
+                  <div className="trip-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
 
-                <p>
-                  A short story about the trip, what I did, who I went with,
-                  and what made the experience memorable.
-                </p>
-              </div>
-            </article>
 
-            <article className="trip-card">
-              <div className="trip-number">02</div>
+                  <div className="trip-image">
 
-              <div className="trip-image">
-                <span>Trip Photo</span>
-              </div>
+                    {trip.image ? (
+                      <img
+                        src={trip.image}
+                        alt={trip.name}
+                      />
+                    ) : (
+                      <span>
+                        Trip Photo
+                      </span>
+                    )}
 
-              <div className="trip-info">
-                <span className="trip-date">MONTH · YEAR</span>
-                <h3>Trip Name</h3>
-                <p className="trip-location">
-                  Location
-                </p>
+                  </div>
 
-                <p>
-                  A short story about the trip, what I did, who I went with,
-                  and what made the experience memorable.
-                </p>
-              </div>
-            </article>
 
-            <article className="trip-card">
-              <div className="trip-number">03</div>
+                  <div className="trip-info">
 
-              <div className="trip-image">
-                <span>Trip Photo</span>
-              </div>
+                    <span className="trip-date">
+                      {trip.date}
+                    </span>
 
-              <div className="trip-info">
-                <span className="trip-date">MONTH · YEAR</span>
-                <h3>Trip Name</h3>
-                <p className="trip-location">
-                  Location
-                </p>
+                    <h3>
+                      {trip.name}
+                    </h3>
 
-                <p>
-                  A short story about the trip, what I did, who I went with,
-                  and what made the experience memorable.
-                </p>
-              </div>
-            </article>
+                    <p className="trip-location">
+                      {trip.location}
+                    </p>
+
+                    <p>
+                      {trip.description}
+                    </p>
+
+                  </div>
+
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Travel Style */}
         <section className="travel-section">
+
           <div className="section-heading">
-            <h2>What I Like About Traveling</h2>
+
+            <h2>
+              {travelPage.travelInterests.title}
+            </h2>
+
             <p>
-              The parts of traveling that I find most interesting.
+              {travelPage.travelInterests.description}
             </p>
+
           </div>
+
 
           <div className="travel-interest-grid">
-            <article className="travel-interest-card">
-              <span className="travel-interest-number">01</span>
-              <h3>Exploring</h3>
-              <p>
-                Wandering through unfamiliar places and discovering things
-                that aren't necessarily in a guidebook.
-              </p>
-            </article>
 
-            <article className="travel-interest-card">
-              <span className="travel-interest-number">02</span>
-              <h3>Architecture</h3>
-              <p>
-                Seeing how different places use buildings, infrastructure,
-                and design to shape their environment.
-              </p>
-            </article>
+            {travelPage.travelInterests.interests.map(
+              (interest, index) => (
+                <article
+                  className="travel-interest-card"
+                  key={index}
+                >
 
-            <article className="travel-interest-card">
-              <span className="travel-interest-number">03</span>
-              <h3>Food</h3>
-              <p>
-                Trying local food and finding restaurants and dishes that are
-                unique to the places I visit.
-              </p>
-            </article>
+                  <span className="travel-interest-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-            <article className="travel-interest-card">
-              <span className="travel-interest-number">04</span>
-              <h3>Photography</h3>
-              <p>
-                Photographing places and moments that I want to remember long
-                after a trip is over.
-              </p>
-            </article>
+                  <h3>
+                    {interest.title}
+                  </h3>
 
-            <article className="travel-interest-card">
-              <span className="travel-interest-number">05</span>
-              <h3>History</h3>
-              <p>
-                Learning about the history and events that shaped the places
-                I'm visiting.
-              </p>
-            </article>
+                  <p>
+                    {interest.description}
+                  </p>
 
-            <article className="travel-interest-card">
-              <span className="travel-interest-number">06</span>
-              <h3>People</h3>
-              <p>
-                Meeting people and getting a better sense of how everyday life
-                differs from place to place.
-              </p>
-            </article>
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Future Destinations */}
         <section className="travel-section">
+
           <div className="section-heading">
-            <h2>Places I Want to Go</h2>
+
+            <h2>
+              {travelPage.futureDestinations.title}
+            </h2>
+
             <p>
-              A growing list of places I'd like to explore someday.
+              {travelPage.futureDestinations.description}
             </p>
+
           </div>
+
 
           <div className="future-grid">
-            <article className="future-card">
-              <span>01</span>
-              <h3>Destination</h3>
-              <p>Country / Region</p>
-            </article>
 
-            <article className="future-card">
-              <span>02</span>
-              <h3>Destination</h3>
-              <p>Country / Region</p>
-            </article>
+            {travelPage.futureDestinations.destinations.map(
+              (destination, index) => (
+                <article
+                  className="future-card"
+                  key={index}
+                >
 
-            <article className="future-card">
-              <span>03</span>
-              <h3>Destination</h3>
-              <p>Country / Region</p>
-            </article>
+                  <span>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-            <article className="future-card">
-              <span>04</span>
-              <h3>Destination</h3>
-              <p>Country / Region</p>
-            </article>
+                  <h3>
+                    {destination.name}
+                  </h3>
 
-            <article className="future-card">
-              <span>05</span>
-              <h3>Destination</h3>
-              <p>Country / Region</p>
-            </article>
+                  <p>
+                    {destination.region}
+                  </p>
 
-            <article className="future-card">
-              <span>06</span>
-              <h3>Destination</h3>
-              <p>Country / Region</p>
-            </article>
+                </article>
+              )
+            )}
+
           </div>
+
         </section>
+
 
         {/* Travel Philosophy */}
         <section className="travel-closing">
-          <h2>Go Somewhere New</h2>
+
+          <h2>
+            {travelPage.closing.title}
+          </h2>
+
           <p>
-            Traveling gives me an opportunity to step outside of my usual
-            routine, experience something unfamiliar, and come back with a
-            different perspective.
+            {travelPage.closing.description}
           </p>
+
         </section>
+
       </main>
+
     </div>
   );
 };
