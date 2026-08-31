@@ -1,6 +1,6 @@
-import linkedinImage from "../assets/linkedin.png";
-import githubImage from "../assets/github.png";
-import emailImage from "../assets/email.png";
+import linkedinImage from "../assets/contact/linkedin.png";
+import githubImage from "../assets/contact/github.png";
+import emailImage from "../assets/contact/email.png";
 
 export const contactPage = {
   title: "Contact",

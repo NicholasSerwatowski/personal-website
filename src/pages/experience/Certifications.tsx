@@ -13,6 +13,7 @@ function Certifications() {
       <div className="certifications-list">
         {certifications.map((certification, index) => (
           <div className="certification-card" key={index}>
+            {/* Optional certification logo/image */}
             {certification.image && (
               <img
                 src={certification.image}
@@ -34,6 +35,7 @@ function Certifications() {
 
               <p>{certification.description}</p>
 
+              {/* Optional credential ID */}
               {certification.credentialId && (
                 <p className="credential-id">
                   <strong>Credential ID:</strong>{" "}
@@ -41,39 +43,77 @@ function Certifications() {
                 </p>
               )}
 
-              {certification.verificationUrl && (
-                <a
-                  href={certification.verificationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="verification-link"
-                >
-                  Verify Certification
-                </a>
-              )}
+              {/* Optional certificate images */}
+              {certification.certificates &&
+                certification.certificates.length > 0 && (
+                  <div className="certification-document">
+                    <h4>Certificates</h4>
 
-              {certification.certificate && (
-                <div className="certification-document">
-                  <h4>Certificate</h4>
+                    <div className="certificate-images">
+                      {certification.certificates.map(
+                        (certificate, certificateIndex) => {
+                          const certificateImage = (
+                            <img
+                              src={certificate.image}
+                              alt={`${certification.title} certificate ${
+                                certificateIndex + 1
+                              }`}
+                              className="certificate-image"
+                            />
+                          );
 
-                  <button
-                    className="certificate-button"
-                    onClick={() =>
-                      setSelectedCertificate(certification.certificate!)
-                    }
-                  >
-                    <img
-                      src={certification.certificate}
-                      alt={`${certification.title} certificate`}
-                    />
-                  </button>
-                </div>
-              )}
+                          return (
+                            <div
+                              className="certificate-item"
+                              key={certificateIndex}
+                            >
+                              {/* Image with optional link */}
+                              {certificate.url ? (
+                                <a
+                                  href={certificate.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="certificate-button"
+                                >
+                                  {certificateImage}
+
+                                  <span className="certificate-link-overlay">
+                                    View Link ↗
+                                  </span>
+                                </a>
+                              ) : (
+                                <button
+                                  className="certificate-button"
+                                  onClick={() =>
+                                    setSelectedCertificate(
+                                      certificate.image
+                                    )
+                                  }
+                                  type="button"
+                                >
+                                  {certificateImage}
+                                </button>
+                              )}
+
+                              {/* Optional description */}
+                              {certificate.description && (
+                                <p className="certificate-description">
+                                  {certificate.description}
+                                </p>
+                              )}
+                            </div>
+                          );
+                        }
+                      )}
+                    </div>
+                  </div>
+                )}
             </div>
           </div>
         ))}
       </div>
 
+      {/* Enlarged certificate overlay */}
       {selectedCertificate && (
         <div
           className="certificate-overlay"
@@ -83,6 +123,7 @@ function Certifications() {
             className="certificate-close"
             onClick={() => setSelectedCertificate(null)}
             aria-label="Close certificate"
+            type="button"
           >
             &times;
           </button>

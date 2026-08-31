@@ -1,5 +1,5 @@
-import { sampleA } from "./samplea";
+import { PLVMediaApp } from "./plvmediaapp";
 
 export const archiveProjects = [
-  sampleA,
+  PLVMediaApp,
 ];

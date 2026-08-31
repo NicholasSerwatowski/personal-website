@@ -1,4 +1,13 @@
-import cwruImage from "../../assets/cwru.jpg";
+import ARC from "../../assets/experience/certifications/ARC.jpg";
+import FirstAid from "../../assets/experience/certifications/FirstAid.png";
+import Matlab from "../../assets/experience/certifications/Matlab.png";
+import OnRamp from "../../assets/experience/certifications/OnRamp.png";
+
+export interface CertificateImage {
+  image: string;
+  url?: string;
+  description?: string;
+}
 
 export interface Certification {
   title: string;
@@ -6,23 +15,49 @@ export interface Certification {
   date: string;
   description: string;
   image?: string;
-  certificate?: string;
+  certificates?: CertificateImage[];
   credentialId?: string;
-  verificationUrl?: string;
   expiration?: string;
 }
 
 export const certifications: Certification[] = [
   {
-    title: "Example Certification",
-    organization: "Example Organization",
-    date: "June 2026",
+    title: "MATLAB Onramp",
+    organization: "MathWorks",
+    date: "May 27, 2026",
     description:
-      "Description of the certification and the skills or knowledge it demonstrates.",
-    image: cwruImage,
-    certificate: cwruImage,
+      ``,
+    image: Matlab,
+
+    certificates: [
+      {
+        image: OnRamp,
+        url: "https://matlabacademy.mathworks.com/progress/certificate.pdf?course=gettingstarted&release=v1&language=en&",
+        description: "",
+      },
+    ],
+
     credentialId: undefined,
-    verificationUrl: undefined,
     expiration: undefined,
+  },
+
+  {
+    title: "Adult and Pediatric First Aid/CPR/AED",
+    organization: "American Red Cross",
+    date: "May 26, 2026",
+    description:
+      ``,
+    image: ARC,
+
+    certificates: [
+      {
+        image: FirstAid,
+        url: "https://www.redcross.org/take-a-class/qrcode?email=nick.serwatowski%40gmail.com&selectedCerts=id-02AK63B%2C&size=wallet",
+        description: "",
+      },
+    ],
+
+    credentialId: "02AK63B",
+    expiration: "May 26, 2028",
   },
 ];

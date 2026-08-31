@@ -1,5 +1,5 @@
-import { sampleP } from "./samplep";
+import { PersonalWebsite } from "./personalwebsite";
 
 export const personalProjects = [
-  sampleP,
+  PersonalWebsite,
 ];

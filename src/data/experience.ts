@@ -1,8 +1,8 @@
-import awardsImage from "../assets/cwru.jpg";
-import certificationsImage from "../assets/cwru.jpg";
-import educationImage from "../assets/cwru.jpg";
-import researchImage from "../assets/cwru.jpg";
-import workImage from "../assets/cwru.jpg";
+import awardsImage from "../assets/experience/Awards.png";
+import certificationsImage from "../assets/experience/Certifications.png";
+import educationImage from "../assets/experience/Education.png";
+import researchImage from "../assets/experience/Research.png";
+import workImage from "../assets/experience/Work.jpg";
 
 export const experiencePage = {
   title: "Experience",

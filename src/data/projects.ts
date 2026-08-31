@@ -1,6 +1,6 @@
-import archiveImage from "../assets/ocm.png";
-import featuredImage from "../assets/cwru.jpg";
-import personalImage from "../assets/plhs.png";
+import archiveImage from "../assets/projects/archive.png";
+import featuredImage from "../assets/projects/featured.jpg";
+import personalImage from "../assets/projects/personal.png";
 
 export const projectCategories = [
   {

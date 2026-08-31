@@ -1,5 +1,5 @@
-import { sampleF } from "./samplef";
+import { CaseWind } from "./casewind";
 
 export const featuredProjects = [
-  sampleF,
+  CaseWind,
 ];

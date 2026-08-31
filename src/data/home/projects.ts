@@ -24,4 +24,15 @@ export const homeProjects = [
       "Project Management",
     ],
   },
+
+  {
+    title: "Personal Website Development",
+
+    description:
+      "Placeholder",
+
+    stack: [
+      "Placeholder",
+    ],
+  },
 ];

@@ -7,11 +7,11 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
   import Personal from "./pages/projects/Personal";
-    import SampleP from "./pages/projects/personal/SampleP";
+    import PersonalWebsitePage from "./pages/projects/personal/PersonalWebsite";
   import Archive from "./pages/projects/Archive";
-    import SampleA from "./pages/projects/archive/SampleA";
+    import PLVMediaAppPage from "./pages/projects/archive/PLVMediaApp";
   import Featured from "./pages/projects/Featured";
-    import SampleF from "./pages/projects/featured/SampleF";
+    import CaseWindPage from "./pages/projects/featured/CaseWind";
 import Experience from "./pages/Experience";
   import Education from "./pages/experience/Education";
     import CWRU from "./pages/experience/education/CWRU";
@@ -71,11 +71,11 @@ function App() {
         <Route path="/personal-website/projects" element={<Projects />} />
         {/* This is the projects sub-pages */}
           <Route path="/personal-website/projects/featured" element={<Featured />} />
-            <Route path="/personal-website/projects/featured/samplef" element={<SampleF />} />
+            <Route path="/personal-website/projects/featured/casewind" element={<CaseWindPage />} />
           <Route path="/personal-website/projects/personal" element={<Personal />} />
-            <Route path="/personal-website/projects/personal/samplep" element={<SampleP />} />
+            <Route path="/personal-website/projects/personal/personalwebsite" element={<PersonalWebsitePage />} />
           <Route path="/personal-website/projects/archive" element={<Archive />} />
-            <Route path="/personal-website/projects/archive/samplea" element={<SampleA />} />
+            <Route path="/personal-website/projects/archive/plvmediaapp" element={<PLVMediaAppPage />} />
 
         {/* This is the experience page */}
         <Route path="/personal-website/experience" element={<Experience />} />

@@ -2,9 +2,9 @@ import { useState } from "react";
 import { awards } from "../../data/experience/awards";
 
 function Awards() {
-  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(
-    null
-  );
+  const [selectedCertificate, setSelectedCertificate] = useState<
+    string | null
+  >(null);
 
   return (
     <div className="section">
@@ -23,6 +23,7 @@ function Awards() {
 
             <div className="award-content">
               <h2>{award.title}</h2>
+
               <h3>{award.organization}</h3>
 
               <div className="award-dates">
@@ -36,40 +37,65 @@ function Awards() {
 
               <p>{award.description}</p>
 
-              {award.certificates && award.certificates.length > 0 && (
-                <div className="award-certificates">
-                  <h4>Certificates</h4>
+              {award.certificates &&
+                award.certificates.length > 0 && (
+                  <div className="award-certificates">
+                    <h4>Certificates</h4>
 
-                  <div className="certificate-list">
-                    {award.certificates.map(
-                      (certificate, certificateIndex) => (
-                        <div
-                          className="certificate"
-                          key={certificateIndex}
-                        >
-                          <button
-                            className="certificate-button"
-                            onClick={() =>
-                              setSelectedCertificate(certificate.image)
-                            }
-                          >
+                    <div className="certificate-list">
+                      {award.certificates.map(
+                        (certificate, certificateIndex) => {
+                          const certificateImage = (
                             <img
                               src={certificate.image}
                               alt={`${award.title} certificate ${
                                 certificateIndex + 1
                               }`}
                             />
-                          </button>
+                          );
 
-                          {certificate.description && (
-                            <p>{certificate.description}</p>
-                          )}
-                        </div>
-                      )
-                    )}
+                          return (
+                            <div
+                              className="certificate"
+                              key={certificateIndex}
+                            >
+                              {certificate.url ? (
+                                <a
+                                  href={certificate.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="certificate-button"
+                                >
+                                  {certificateImage}
+
+                                  <span className="certificate-link-overlay">
+                                    View Link ↗
+                                  </span>
+                                </a>
+                              ) : (
+                                <button
+                                  className="certificate-button"
+                                  onClick={() =>
+                                    setSelectedCertificate(
+                                      certificate.image
+                                    )
+                                  }
+                                  type="button"
+                                >
+                                  {certificateImage}
+                                </button>
+                              )}
+
+                              {certificate.description && (
+                                <p>{certificate.description}</p>
+                              )}
+                            </div>
+                          );
+                        }
+                      )}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
             </div>
           </div>
         ))}
@@ -84,6 +110,7 @@ function Awards() {
             className="certificate-close"
             onClick={() => setSelectedCertificate(null)}
             aria-label="Close certificate"
+            type="button"
           >
             &times;
           </button>

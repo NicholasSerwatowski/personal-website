@@ -1,8 +1,8 @@
-import booksImage from "../assets/cwru.jpg";
-import learningImage from "../assets/cwru.jpg";
-import musicImage from "../assets/cwru.jpg";
-import photographyImage from "../assets/cwru.jpg";
-import travelImage from "../assets/cwru.jpg";
+import booksImage from "../assets/interests/Books.png";
+import learningImage from "../assets/interests/Learning.png";
+import musicImage from "../assets/interests/Music.png";
+import photographyImage from "../assets/interests/Photography.png";
+import travelImage from "../assets/interests/Travel.png";
 
 export const interestsPage = {
   title: "Interests",

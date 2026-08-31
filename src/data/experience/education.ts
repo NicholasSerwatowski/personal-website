@@ -1,6 +1,6 @@
-import cwruImage from "../../assets/cwru.jpg";
-import plhsImage from "../../assets/plhs.png";
-import ocmImage from "../../assets/ocm.png";
+import cwruImage from "../../assets/experience/education/cwru.jpg";
+import plhsImage from "../../assets/experience/education/plhs.png";
+import ocmImage from "../../assets/experience/education/ocm.png";
 
 // Use to add or change school information on education page
 

@@ -1,4 +1,4 @@
-import cwruImage from "../../assets/cwru.jpg";
+import cwruImage from "../../assets/experience/education/cwru.jpg";
 
 export const highlights = [
   {

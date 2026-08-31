@@ -2,7 +2,7 @@ export const homePage = {
   hero: {
     eyebrow: "Hello, I'm",
 
-    name: "Nicholas",
+    name: "Nicholas Serwatowski",
 
     title: "Mechanical & Aerospace Engineering Student | Robotics Enthusiast | Builder | Musician | Community Leader",
   },

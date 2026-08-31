@@ -1,4 +1,4 @@
-import cwruImage from "../../assets/cwru.jpg";
+import cwruImage from "../../assets/experience/education/cwru.jpg";
 export interface ResearchExperience {
   title: string;
   organization: string;
