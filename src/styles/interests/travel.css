@@ -1,17 +1,16 @@
-/* =========================================
-   Travel Page
-   ========================================= */
+/* =========================================================
+   PAGE
+========================================================= */
 
 .travel-page {
-  width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 5rem;
 }
 
-/* =========================================
-   Header
-   ========================================= */
+/* =========================================================
+   HEADER
+========================================================= */
 
 .travel-header {
   max-width: 850px;
@@ -20,325 +19,445 @@
 }
 
 .travel-header h1 {
-  margin: 0 0 1rem;
+  margin-bottom: 1.5rem;
   font-size: 3.5rem;
 }
 
 .travel-header p {
   max-width: 750px;
   margin: 0 auto;
-  line-height: 1.8;
   font-size: 1.05rem;
+  line-height: 1.8;
 }
 
-/* =========================================
-   Sections
-   ========================================= */
-
-.travel-section {
-  margin-bottom: 6rem;
+.travel-location-count {
+  display: block;
+  margin-top: 1.25rem;
+  color: #777;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.section-heading {
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.travel-content {
+  width: 100%;
+}
+
+.travel-map-section {
+  margin-bottom: 3rem;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.travel-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
   margin-bottom: 2rem;
 }
 
-.section-heading h2 {
-  margin: 0 0 0.5rem;
+.travel-section-heading h2 {
+  margin: 0.5rem 0 0;
   font-size: 2rem;
 }
 
-.section-heading p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* =========================================
-   Destinations
-   ========================================= */
-
-.destination-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.destination-card {
-  overflow: hidden;
-  border: 1px solid #dddddd;
-  border-radius: 10px;
-  background: #ffffff;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.destination-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.destination-large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.destination-image {
-  aspect-ratio: 4 / 3;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #dddddd;
-  color: #777777;
-}
-
-.destination-large .destination-image {
-  aspect-ratio: 1 / 1;
-}
-
-.destination-info {
-  padding: 1.25rem;
-}
-
-.destination-location {
-  display: block;
-  margin-bottom: 0.4rem;
-
-  color: #777777;
-  font-size: 0.75rem;
-  font-weight: 600;
-
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.destination-info h3 {
-  margin: 0 0 0.5rem;
-}
-
-.destination-info p {
-  margin: 0;
-  line-height: 1.6;
-  font-size: 0.9rem;
-}
-
-/* =========================================
-   Favorite Trips
-   ========================================= */
-
-.trip-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.trip-card {
-  display: grid;
-  grid-template-columns: 50px 320px 1fr;
-  gap: 2rem;
-  align-items: center;
-
-  padding: 1.5rem;
-
-  border: 1px solid #dddddd;
-  border-radius: 12px;
-  background: #ffffff;
-}
-
-.trip-number {
-  color: #999999;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.trip-image {
-  aspect-ratio: 4 / 3;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 8px;
-  background: #dddddd;
-  color: #777777;
-}
-
-.trip-date {
-  display: block;
-  margin-bottom: 0.5rem;
-
-  color: #777777;
-  font-size: 0.7rem;
-  font-weight: 600;
-
-  letter-spacing: 0.1em;
-}
-
-.trip-info h3 {
-  margin: 0 0 0.25rem;
-  font-size: 1.5rem;
-}
-
-.trip-location {
-  margin: 0 0 1rem;
-
-  color: #777777;
-  font-size: 0.9rem;
-}
-
-.trip-info > p:last-child {
-  max-width: 600px;
+.travel-section-heading p {
+  max-width: 420px;
   margin: 0;
   line-height: 1.7;
+  text-align: right;
 }
 
-/* =========================================
-   Travel Interests
-   ========================================= */
-
-.travel-interest-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+.travel-eyebrow {
+  color: #777;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.travel-interest-card {
-  padding: 1.75rem;
+/* =========================================================
+   MAP
+========================================================= */
 
-  border: 1px solid #dddddd;
-  border-radius: 10px;
-
-  background: #ffffff;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+.travel-map-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background: #f7f8f9;
 }
 
-.travel-interest-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
-}
-
-.travel-interest-number {
+.travel-map {
   display: block;
-  margin-bottom: 1.25rem;
+  width: 100%;
+  height: auto;
+}
 
-  color: #999999;
+/* =========================================================
+   COUNTRIES
+========================================================= */
+
+.travel-country {
+  fill: #ffffff;
+  stroke: #cfcfcf;
+  stroke-width: 0.6;
+  outline: none;
+  transition:
+    fill 0.2s ease,
+    stroke 0.2s ease;
+}
+
+.travel-country:hover {
+  fill: #f0f0f0;
+}
+
+/* =========================================================
+   MAP MARKERS
+========================================================= */
+
+.travel-marker {
+  fill: #111;
+  stroke: #fff;
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition:
+    r 0.15s ease,
+    fill 0.15s ease;
+}
+
+.travel-marker:hover {
+  r: 5;
+  fill: #333;
+}
+
+.travel-marker-label {
+  fill: #111;
+  font-size: 10px;
+  font-weight: 500;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =========================================================
+   MAP CONTROLS
+========================================================= */
+
+.travel-map-controls {
+  position: absolute;
+  z-index: 10;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.travel-map-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  background: #fff;
+  color: #111;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.travel-map-controls button:hover {
+  border-color: #aaa;
+  background: #f5f5f5;
+  transform: translateY(-1px);
+}
+
+.travel-map-controls button:focus-visible {
+  outline: 2px solid #777;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   MAP CAPTION
+========================================================= */
+
+.travel-map-caption {
+  margin: 1rem 0 0;
+  color: #777;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================================================
+   LOCATION OVERLAY
+========================================================= */
+
+.travel-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  animation: travelOverlayIn 0.2s ease;
+}
+
+/* =========================================================
+   LOCATION MODAL
+========================================================= */
+
+.travel-modal {
+  position: relative;
+  width: min(900px, 100%);
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  animation: travelModalIn 0.25s ease;
+}
+
+/* =========================================================
+   CLOSE BUTTON
+   Matches the clean Awards-style button
+========================================================= */
+
+.travel-modal-close {
+  position: absolute;
+  z-index: 10;
+  top: 1rem;
+  right: 1.5rem;
+  border: none;
+  background: none;
+  color: #111;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.travel-modal-close:hover {
+  opacity: 0.7;
+}
+
+.travel-modal-close:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   MODAL IMAGE
+========================================================= */
+
+.travel-modal-image {
+  width: 100%;
+  max-height: 420px;
+  overflow: hidden;
+}
+
+.travel-modal-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.travel-modal-content {
+  padding: 3.5rem;
+}
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.travel-modal-header {
+  max-width: 700px;
+  margin-bottom: 3rem;
+}
+
+.travel-modal-region {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #777;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.travel-modal-header h2 {
+  margin: 0 0 1rem;
+  font-size: 2.75rem;
+  line-height: 1.15;
+}
+
+.travel-modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #777;
   font-size: 0.8rem;
   font-weight: 600;
 }
 
-.travel-interest-card h3 {
-  margin: 0 0 0.6rem;
+.travel-meta-divider {
+  color: #bbb;
 }
 
-.travel-interest-card p {
-  margin: 0;
-  line-height: 1.6;
-}
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
-/* =========================================
-   Future Destinations
-   ========================================= */
-
-.future-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  border-top: 1px solid #dddddd;
-  border-left: 1px solid #dddddd;
-}
-
-.future-card {
-  min-height: 150px;
-  padding: 1.5rem;
-
-  border-right: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
-
-  transition: background 0.2s ease;
-}
-
-.future-card:hover {
-  background: #f7f7f7;
-}
-
-.future-card > span {
-  display: block;
-  margin-bottom: 1.5rem;
-
-  color: #999999;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.future-card h3 {
-  margin: 0 0 0.3rem;
-}
-
-.future-card p {
-  margin: 0;
-
-  color: #777777;
-  font-size: 0.85rem;
-}
-
-/* =========================================
-   Closing
-   ========================================= */
-
-.travel-closing {
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  padding: 4rem 0;
-
-  text-align: center;
-
-  border-top: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
-}
-
-.travel-closing h2 {
-  margin: 0 0 1rem;
-  font-size: 2.25rem;
-}
-
-.travel-closing p {
-  max-width: 650px;
-  margin: 0 auto;
+.travel-modal-description {
+  max-width: 700px;
+  margin: 0 0 3.5rem;
+  font-size: 1.05rem;
   line-height: 1.8;
 }
 
-/* =========================================
-   Responsive Design
-   ========================================= */
+/* =========================================================
+   STORY
+========================================================= */
 
-@media (max-width: 1100px) {
-  .destination-grid {
-    grid-template-columns: repeat(2, 1fr);
+.travel-story {
+  margin-bottom: 3.5rem;
+}
+
+.travel-story-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.travel-story-heading span {
+  color: #888;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.travel-story-heading h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.travel-story-content {
+  max-width: 700px;
+}
+
+.travel-story-content p {
+  margin: 0 0 1.5rem;
+  line-height: 1.8;
+}
+
+.travel-story-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   PHOTOS
+========================================================= */
+
+.travel-photos {
+  margin-bottom: 0;
+}
+
+.travel-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.travel-photo-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes travelOverlayIn {
+  from {
+    opacity: 0;
   }
 
-  .destination-large {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-
-  .destination-large .destination-image {
-    aspect-ratio: 16 / 7;
-  }
-
-  .travel-interest-grid {
-    grid-template-columns: repeat(2, 1fr);
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 850px) {
+@keyframes travelModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+  .travel-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .travel-section-heading p {
+    max-width: 650px;
+    text-align: left;
+  }
+
+  .travel-modal-content {
+    padding: 3rem 2rem;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
   .travel-page {
-    padding: 2rem 1.25rem;
+    padding: 2rem 1.25rem 4rem;
   }
 
   .travel-header {
@@ -349,48 +468,85 @@
     font-size: 2.75rem;
   }
 
-  .trip-card {
+  .travel-section-heading h2 {
+    font-size: 1.75rem;
+  }
+
+  .travel-map-container {
+    border-radius: 10px;
+  }
+
+  .travel-map-controls {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .travel-map-controls button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .travel-marker-label {
+    font-size: 8px;
+  }
+
+  .travel-overlay {
+    padding: 1rem;
+  }
+
+  .travel-modal {
+    max-height: calc(100vh - 2rem);
+    border-radius: 12px;
+  }
+
+  .travel-modal-image {
+    max-height: 280px;
+  }
+
+  .travel-modal-image img {
+    max-height: 280px;
+  }
+
+  .travel-modal-content {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .travel-modal-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .travel-modal-header h2 {
+    font-size: 2.1rem;
+  }
+
+  .travel-modal-description {
+    font-size: 0.95rem;
+  }
+
+  .travel-photo-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
   }
 
-  .trip-number {
-    display: none;
-  }
-
-  .trip-image {
-    width: 100%;
-  }
-
-  .future-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .travel-modal-close {
+    top: 0.75rem;
+    right: 1rem;
   }
 }
 
-@media (max-width: 600px) {
-  .destination-grid,
-  .travel-interest-grid,
-  .future-grid {
-    grid-template-columns: 1fr;
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .travel-header h1 {
+    font-size: 2.4rem;
   }
 
-  .destination-large {
-    grid-column: span 1;
+  .travel-modal-content {
+    padding: 3rem 1.25rem 1.5rem;
   }
 
-  .destination-large .destination-image {
-    aspect-ratio: 4 / 3;
-  }
-
-  .travel-section {
-    margin-bottom: 4rem;
-  }
-
-  .travel-closing {
-    padding: 3rem 0;
-  }
-
-  .travel-closing h2 {
+  .travel-modal-header h2 {
     font-size: 1.8rem;
   }
 }

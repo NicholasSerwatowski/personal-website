@@ -1,171 +1,97 @@
+import HungerGames1 from "../../assets/interests/books/HungerGames1.jpg";
+
+export interface TravelLocation {
+  id: string;
+
+  name: string;
+  region: string;
+  country: string;
+
+  latitude: number;
+  longitude: number;
+
+  date: string;
+
+  image: string | null;
+
+  description: string;
+
+  story: string[];
+
+  photos: string[];
+}
+
 export const travelPage = {
   title: "Travel",
 
   description:
-    "I enjoy exploring new places, experiencing different environments, and finding the interesting details that make each place unique.",
+    "A collection of places I've visited and the experiences I've had along the way.",
 
-  placesVisited: {
-    title: "Places I've Visited",
+  locations: [
+    {
+      id: "cleveland-ohio",
 
-    description:
-      "Some of the places I've had the opportunity to explore.",
+      name: "Cleveland",
+      region: "Ohio",
+      country: "United States",
 
-    destinations: [
-      {
-        country: "United States",
-        name: "Cleveland, Ohio",
-        description:
-          "A place I've come to know well while studying at Case Western Reserve University.",
-        image: null,
-        featured: true,
-      },
-      {
-        country: "State / Country",
-        name: "Place Name",
-        description:
-          "A short description of the trip or what made this place memorable.",
-        image: null,
-        featured: false,
-      },
-      {
-        country: "State / Country",
-        name: "Place Name",
-        description:
-          "A short description of the trip or what made this place memorable.",
-        image: null,
-        featured: false,
-      },
-      {
-        country: "State / Country",
-        name: "Place Name",
-        description:
-          "A short description of the trip or what made this place memorable.",
-        image: null,
-        featured: false,
-      },
-      {
-        country: "State / Country",
-        name: "Place Name",
-        description:
-          "A short description of the trip or what made this place memorable.",
-        image: null,
-        featured: false,
-      },
-    ],
-  },
+      latitude: 41.4993,
+      longitude: -81.6944,
 
-  favoriteTrips: {
-    title: "Favorite Trips",
+      date: "2024 — Present",
 
-    description:
-      "Trips and experiences that have stood out to me.",
+      image: HungerGames1,
 
-    trips: [
-      {
-        date: "MONTH · YEAR",
-        name: "Trip Name",
-        location: "Location",
-        description:
-          "A short story about the trip, what I did, who I went with, and what made the experience memorable.",
-        image: null,
-      },
-      {
-        date: "MONTH · YEAR",
-        name: "Trip Name",
-        location: "Location",
-        description:
-          "A short story about the trip, what I did, who I went with, and what made the experience memorable.",
-        image: null,
-      },
-      {
-        date: "MONTH · YEAR",
-        name: "Trip Name",
-        location: "Location",
-        description:
-          "A short story about the trip, what I did, who I went with, and what made the experience memorable.",
-        image: null,
-      },
-    ],
-  },
+      description:
+        "Cleveland has become an important place in my life while studying at Case Western Reserve University.",
 
-  travelInterests: {
-    title: "What I Like About Traveling",
+      story: [
+        "Cleveland has become an important part of my life while studying at Case Western Reserve University.",
 
-    description:
-      "The parts of traveling that I find most interesting.",
+        "I've spent time exploring different parts of the city, discovering restaurants, visiting museums, and getting to know the area around campus.",
 
-    interests: [
-      {
-        title: "Exploring",
-        description:
-          "Wandering through unfamiliar places and discovering things that aren't necessarily in a guidebook.",
-      },
-      {
-        title: "Architecture",
-        description:
-          "Seeing how different places use buildings, infrastructure, and design to shape their environment.",
-      },
-      {
-        title: "Food",
-        description:
-          "Trying local food and finding restaurants and dishes that are unique to the places I visit.",
-      },
-      {
-        title: "Photography",
-        description:
-          "Photographing places and moments that I want to remember long after a trip is over.",
-      },
-      {
-        title: "History",
-        description:
-          "Learning about the history and events that shaped the places I'm visiting.",
-      },
-      {
-        title: "People",
-        description:
-          "Meeting people and getting a better sense of how everyday life differs from place to place.",
-      },
-    ],
-  },
+        "What started as a place I moved to for school has gradually become a place that feels familiar."
+      ],
 
-  futureDestinations: {
-    title: "Places I Want to Go",
+      photos: [
+        HungerGames1,
+      ]
+    }
 
-    description:
-      "A growing list of places I'd like to explore someday.",
-
-    destinations: [
-      {
-        name: "Destination",
-        region: "Country / Region",
-      },
-      {
-        name: "Destination",
-        region: "Country / Region",
-      },
-      {
-        name: "Destination",
-        region: "Country / Region",
-      },
-      {
-        name: "Destination",
-        region: "Country / Region",
-      },
-      {
-        name: "Destination",
-        region: "Country / Region",
-      },
-      {
-        name: "Destination",
-        region: "Country / Region",
-      },
-    ],
-  },
-
-  closing: {
-    title: "Go Somewhere New",
-
-    description:
-      "Traveling gives me an opportunity to step outside of my usual routine, experience something unfamiliar, and come back with a different perspective.",
-  },
+    /*
+     * ADD NEW LOCATIONS HERE
+     *
+     * Example:
+     *
+     * {
+     *   id: "chicago-illinois",
+     *
+     *   name: "Chicago",
+     *   region: "Illinois",
+     *   country: "United States",
+     *
+     *   latitude: 41.8781,
+     *   longitude: -87.6298,
+     *
+     *   date: "July 2025",
+     *
+     *   image: chicagoImage,
+     *
+     *   description:
+     *     "A short description of my experience in Chicago.",
+     *
+     *   story: [
+     *     "The first paragraph about my time here.",
+     *
+     *     "The second paragraph about what I did or
+     *      what made the trip memorable."
+     *   ],
+     *
+     *   photos: [
+     *     chicagoPhoto1,
+     *     chicagoPhoto2
+     *   ]
+     * }
+     */
+  ] satisfies TravelLocation[]
 };
