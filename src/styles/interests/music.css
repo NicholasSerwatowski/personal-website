@@ -65,25 +65,80 @@
 
 .album-card {
   min-width: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.album-card:focus-visible {
+  outline: none;
 }
 
 .album-cover {
+  position: relative;
   aspect-ratio: 1 / 1;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin-bottom: 1rem;
-
   border-radius: 8px;
   background: #e5e5e5;
   color: #777777;
-
   overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.album-cover span {
+.album-card:hover .album-cover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.album-card:focus-visible .album-cover {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Album Hover Overlay */
+
+.album-hover-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.album-card:hover .album-hover-overlay,
+.album-card:focus-visible .album-hover-overlay {
+  opacity: 1;
+}
+
+.album-hover-overlay span {
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333333;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.album-cover > span {
   font-size: 0.85rem;
 }
 
@@ -103,6 +158,173 @@
 }
 
 /* =========================================
+   Album Overlay
+   ========================================= */
+
+.album-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  animation: albumOverlayIn 0.2s ease;
+}
+
+.album-modal {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  max-height: calc(100vh - 4rem);
+  padding: 2.5rem;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: albumModalIn 0.2s ease;
+}
+
+/* =========================================
+   Album Close Button
+   ========================================= */
+
+.album-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: black;
+  font-family: inherit;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.album-modal-close:hover {
+  opacity: 0.7;
+}
+
+.album-modal-close:focus-visible {
+  outline: 2px solid black;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   Album Modal Header
+   ========================================= */
+
+.album-modal-header {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding-right: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.album-modal-cover {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e5e5e5;
+  color: #777777;
+}
+
+.album-modal-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.album-modal-cover span {
+  font-size: 0.85rem;
+}
+
+.album-modal-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #777777;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.album-modal-info h2 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.album-modal-info p {
+  margin: 0 0 0.4rem;
+  color: #555555;
+  font-size: 1rem;
+}
+
+.album-modal-info > span:last-child {
+  color: #888888;
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   Album Tracklist
+   ========================================= */
+
+.album-tracklist-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #dddddd;
+}
+
+.album-tracklist-heading h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.album-tracklist-heading span {
+  color: #888888;
+  font-size: 0.8rem;
+}
+
+.album-tracks {
+  border-bottom: 1px solid #dddddd;
+}
+
+.album-track {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.album-track:last-child {
+  border-bottom: none;
+}
+
+.album-track-title {
+  font-size: 0.95rem;
+}
+
+.album-track-duration {
+  color: #888888;
+  font-size: 0.8rem;
+}
+
+/* =========================================
    Artists
    ========================================= */
 
@@ -114,14 +336,11 @@
 
 .artist-card {
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 64px 1fr;
   gap: 1rem;
   align-items: center;
-
   padding: 1.5rem;
-
   border-bottom: 1px solid #dddddd;
-
   transition: background 0.2s ease;
 }
 
@@ -133,10 +352,25 @@
   background: #f7f7f7;
 }
 
-.artist-number {
-  color: #999999;
-  font-size: 0.8rem;
+.artist-image {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #e5e5e5;
+  color: #777777;
+  font-size: 1.1rem;
   font-weight: 600;
+}
+
+.artist-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .artist-card h3 {
@@ -161,12 +395,9 @@
 
 .genre-card {
   padding: 1.5rem;
-
   border: 1px solid #dddddd;
   border-radius: 10px;
-
   background: #ffffff;
-
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -181,6 +412,10 @@
   margin: 0 0 0.4rem;
 }
 
+.genre-emoji {
+  margin-right: 0.5rem;
+}
+
 .genre-card p {
   margin: 0;
   color: #777777;
@@ -189,7 +424,7 @@
 }
 
 /* =========================================
-   Songs
+   Favorite Songs
    ========================================= */
 
 .song-list {
@@ -198,18 +433,97 @@
 
 .song-item {
   display: grid;
-  grid-template-columns: 50px 1fr auto;
+  grid-template-columns: auto 1fr auto;
   gap: 1rem;
   align-items: center;
-
   padding: 1.25rem 0;
-
   border-bottom: 1px solid #dddddd;
+  transition: background 0.2s ease;
 }
 
-.song-number {
-  color: #999999;
-  font-size: 0.8rem;
+.song-item-playing {
+  background: #fafafa;
+}
+
+.song-play-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.song-play-button {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #333333;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.song-play-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  border-color: #aaaaaa;
+  background: #f5f5f5;
+}
+
+.song-play-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.song-play-button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.play-icon {
+  display: block;
+  margin-left: 2px;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* Only changed part: Favorite Songs pause icon */
+
+.pause-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 10px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.pause-icon span {
+  display: block;
+  width: 2px;
+  min-width: 2px;
+  max-width: 2px;
+  height: 12px;
+  min-height: 12px;
+  max-height: 12px;
+  flex: 0 0 2px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 1px;
+  background: currentColor;
+}
+
+.song-main {
+  min-width: 0;
 }
 
 .song-info h3 {
@@ -228,6 +542,27 @@
   font-size: 0.8rem;
 }
 
+.song-progress {
+  margin-top: 0.75rem;
+}
+
+.song-progress input[type="range"] {
+  width: 100%;
+  height: 4px;
+  display: block;
+  margin: 0;
+  accent-color: #333333;
+  cursor: pointer;
+}
+
+.song-progress-times {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.35rem;
+  color: #999999;
+  font-size: 0.7rem;
+}
+
 /* =========================================
    Personal Story
    ========================================= */
@@ -237,9 +572,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: stretch;
-
   padding: 3rem;
-
   border-radius: 12px;
   background: #f5f5f5;
 }
@@ -252,7 +585,6 @@
 
 .story-label {
   margin-bottom: 1rem;
-
   color: #777777;
   font-size: 0.7rem;
   font-weight: 600;
@@ -275,16 +607,21 @@
 
 .music-story-placeholder {
   min-height: 350px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
+  overflow: hidden;
   border-radius: 8px;
   background: #dddddd;
   color: #777777;
-
   text-align: center;
+}
+
+.music-story-placeholder img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 /* =========================================
@@ -295,9 +632,7 @@
   max-width: 800px;
   margin: 0 auto 3rem;
   padding: 4rem 0;
-
   text-align: center;
-
   border-top: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
 }
@@ -311,6 +646,32 @@
   max-width: 650px;
   margin: 0 auto;
   line-height: 1.8;
+}
+
+/* =========================================
+   Animations
+   ========================================= */
+
+@keyframes albumOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes albumModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* =========================================
@@ -349,6 +710,25 @@
   .music-story-placeholder {
     min-height: 250px;
   }
+
+  .album-overlay {
+    padding: 1rem;
+  }
+
+  .album-modal {
+    max-height: calc(100vh - 2rem);
+    padding: 2rem 1.5rem;
+  }
+
+  .album-modal-header {
+    grid-template-columns: 140px 1fr;
+    gap: 1.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .album-modal-info h2 {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -365,8 +745,21 @@
     border-right: none;
   }
 
+  .artist-image {
+    width: 54px;
+    height: 54px;
+  }
+
+  .artist-card {
+    grid-template-columns: 54px 1fr;
+  }
+
   .song-item {
-    grid-template-columns: 35px 1fr auto;
+    grid-template-columns: auto 1fr;
+  }
+
+  .song-duration {
+    display: none;
   }
 
   .music-section {
@@ -379,5 +772,24 @@
 
   .music-closing h2 {
     font-size: 1.8rem;
+  }
+
+  .album-modal-header {
+    grid-template-columns: 1fr;
+    padding-right: 2.5rem;
+  }
+
+  .album-modal-cover {
+    width: 150px;
+    justify-self: center;
+  }
+
+  .album-modal-info {
+    text-align: center;
+  }
+
+  .album-track {
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
   }
 }

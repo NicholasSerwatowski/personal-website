@@ -1,3 +1,6 @@
+import HungerGames1 from "../../assets/interests/books/HungerGames1.jpg";
+import test from "../../assets/interests/music/test.mp3";
+
 export const musicPage = {
   title: "Music",
 
@@ -13,25 +16,124 @@ export const musicPage = {
         title: "Album Name",
         artist: "Artist Name",
         year: "2026",
-        cover: null,
+        cover: HungerGames1,
+
+        songs: [
+          {
+            title: "Song One",
+            duration: "3:42",
+          },
+          {
+            title: "Song Two",
+            duration: "4:15",
+          },
+          {
+            title: "Song Three",
+            duration: "3:28",
+          },
+          {
+            title: "Song Four",
+            duration: "5:01",
+          },
+          {
+            title: "Song Five",
+            duration: "2:57",
+          },
+          {
+            title: "Song Five",
+            duration: "2:57",
+          },
+          {
+            title: "Song Five",
+            duration: "2:57",
+          },
+          {
+            title: "Song Five",
+            duration: "2:57",
+          },
+        ],
       },
+
       {
         title: "Album Name",
         artist: "Artist Name",
         year: "2026",
         cover: null,
+
+        songs: [
+          {
+            title: "Song One",
+            duration: "3:42",
+          },
+          {
+            title: "Song Two",
+            duration: "4:15",
+          },
+          {
+            title: "Song Three",
+            duration: "3:28",
+          },
+          {
+            title: "Song Four",
+            duration: "5:01",
+          },
+        ],
       },
+
       {
         title: "Album Name",
         artist: "Artist Name",
         year: "2026",
         cover: null,
+
+        songs: [
+          {
+            title: "Song One",
+            duration: "3:42",
+          },
+          {
+            title: "Song Two",
+            duration: "4:15",
+          },
+          {
+            title: "Song Three",
+            duration: "3:28",
+          },
+          {
+            title: "Song Four",
+            duration: "5:01",
+          },
+          {
+            title: "Song Five",
+            duration: "2:57",
+          },
+        ],
       },
+
       {
         title: "Album Name",
         artist: "Artist Name",
         year: "2026",
         cover: null,
+
+        songs: [
+          {
+            title: "Song One",
+            duration: "3:42",
+          },
+          {
+            title: "Song Two",
+            duration: "4:15",
+          },
+          {
+            title: "Song Three",
+            duration: "3:28",
+          },
+          {
+            title: "Song Four",
+            duration: "5:01",
+          },
+        ],
       },
     ],
   },
@@ -46,31 +148,37 @@ export const musicPage = {
         name: "Artist Name",
         genre: "Genre",
         favoriteSong: "Favorite song",
+        image: null,
       },
       {
         name: "Artist Name",
         genre: "Genre",
         favoriteSong: "Favorite song",
+        image: null,
       },
       {
         name: "Artist Name",
         genre: "Genre",
         favoriteSong: "Favorite song",
+        image: null,
       },
       {
         name: "Artist Name",
         genre: "Genre",
         favoriteSong: "Favorite song",
+        image: null,
       },
       {
         name: "Artist Name",
         genre: "Genre",
         favoriteSong: "Favorite song",
+        image: null,
       },
       {
         name: "Artist Name",
         genre: "Genre",
         favoriteSong: "Favorite song",
+        image: null,
       },
     ],
   },
@@ -84,27 +192,33 @@ export const musicPage = {
       {
         name: "Rock",
         description: "Classic and modern rock.",
+        emoji: "🎸",
       },
       {
         name: "Alternative",
         description: "Alternative and indie music.",
+        emoji: "🎶",
       },
       {
         name: "Electronic",
         description: "Electronic music and experimental sounds.",
+        emoji: "🎧",
       },
       {
         name: "Classical",
         description: "Orchestral and instrumental music.",
+        emoji: "🎻",
       },
       {
         name: "Jazz",
         description: "Jazz and improvisational music.",
+        emoji: "🎷",
       },
       {
         name: "Other",
         description:
           "Anything interesting enough to catch my attention.",
+        emoji: "✨",
       },
     ],
   },
@@ -120,12 +234,14 @@ export const musicPage = {
         artist: "Artist Name",
         album: "Album Name",
         duration: "3:42",
+        audio: test,
       },
       {
         title: "Song Title",
         artist: "Artist Name",
         album: "Album Name",
         duration: "4:15",
+        audio: "/personal-website/audio/song-two.mp3",
       },
       {
         title: "Song Title",
@@ -166,7 +282,6 @@ export const musicPage = {
 
   closing: {
     title: "Always Looking for Something New",
-
     description:
       "My music taste is constantly changing. There's always another artist, album, or song worth discovering.",
   },
