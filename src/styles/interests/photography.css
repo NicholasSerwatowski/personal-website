@@ -79,31 +79,108 @@
   grid-row: span 2;
 }
 
+/* =========================================
+   Photo Image Buttons
+   ========================================= */
+
+.photo-image-button,
+.story-image-button,
+.collection-photo-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+.photo-image-button {
+  height: 100%;
+}
+
+.photo-image-button.photo-clickable,
+.story-image-button.photo-clickable,
+.collection-photo-button.photo-clickable {
+  cursor: zoom-in;
+}
+
+.photo-image-button:disabled,
+.story-image-button:disabled,
+.collection-photo-button:disabled {
+  cursor: default;
+}
+
+/* =========================================
+   Photo Placeholders
+   ========================================= */
+
 .photo-placeholder {
+  position: relative;
   width: 100%;
   height: 100%;
   min-height: 250px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
+  overflow: hidden;
   background: #dddddd;
   color: #777777;
-
   font-size: 0.9rem;
 }
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================================
+   Photo Hover Overlay
+   ========================================= */
+
+.photo-hover-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.photo-hover-overlay span {
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.photo-clickable:hover .photo-hover-overlay,
+.photo-clickable:focus-visible .photo-hover-overlay {
+  opacity: 1;
+}
+
+/* =========================================
+   Featured Photo Captions
+   ========================================= */
 
 .photo-caption {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-
   padding: 3rem 1.5rem 1.25rem;
-
   color: white;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  pointer-events: none;
 }
 
 .photo-caption h3 {
@@ -131,6 +208,7 @@
   border: 1px solid #dddddd;
   border-radius: 10px;
   background: white;
+  cursor: pointer;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -141,15 +219,27 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.collection-placeholder {
-  aspect-ratio: 4 / 3;
+.collection-card:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
 
+.collection-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: #eeeeee;
   color: #777777;
+}
+
+.collection-placeholder img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .collection-info {
@@ -172,6 +262,125 @@
 }
 
 /* =========================================
+   Collection Overlay
+   ========================================= */
+
+.photography-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.65);
+  overflow-y: auto;
+}
+
+.collection-modal {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  padding: 3rem;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: white;
+}
+
+.photography-overlay-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: black;
+  font-family: inherit;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.photography-overlay-close:hover {
+  opacity: 0.7;
+}
+
+.photography-overlay-close:focus-visible {
+  outline: 2px solid black;
+  outline-offset: 4px;
+}
+
+.collection-modal-header {
+  max-width: 750px;
+  margin-bottom: 2rem;
+  padding-right: 3rem;
+}
+
+.collection-modal-header h2 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.collection-modal-header p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================================
+   Collection Photos
+   ========================================= */
+
+.collection-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.collection-photo {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #eeeeee;
+}
+
+.collection-photo-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dddddd;
+  color: #777777;
+}
+
+.collection-photo-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.collection-photo-caption {
+  padding: 1rem;
+  background: white;
+}
+
+.collection-photo-caption h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.collection-photo-caption p {
+  margin: 0;
+  color: #777777;
+  font-size: 0.8rem;
+}
+
+/* =========================================
    Behind the Photograph
    ========================================= */
 
@@ -183,6 +392,7 @@
 }
 
 .story-image {
+  position: relative;
   overflow: hidden;
   border-radius: 10px;
   background: #eeeeee;
@@ -209,51 +419,109 @@
 }
 
 /* =========================================
-   Photo Details
+   Behind the Photograph Navigation
    ========================================= */
 
-.photo-details {
+.story-navigation-row {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   margin-top: 2rem;
-  padding-top: 1.5rem;
-
-  border-top: 1px solid #dddddd;
 }
 
-.photo-details div {
+.story-navigation {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.06);
+  color: #333333;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
 
+.story-navigation:hover {
+  background: rgba(0, 0, 0, 0.12);
+  transform: scale(1.05);
+}
+
+.story-navigation:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.story-counter {
+  min-width: 50px;
+  text-align: center;
+  color: #777777;
   font-size: 0.9rem;
 }
 
-.detail-label {
-  color: #777777;
-}
-
 /* =========================================
-   Closing
+   Full-Screen Photo Overlay
    ========================================= */
 
-.photography-closing {
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  padding: 3rem 0;
-  text-align: center;
+.photo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.85);
 }
 
-.photography-closing h2 {
-  margin: 0 0 1rem;
-  font-size: 2rem;
+.photo-overlay-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.photography-closing p {
-  margin: 0;
-  line-height: 1.8;
+.photo-overlay-image {
+  display: block;
+  max-width: 92vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.photo-overlay-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: white;
+  font-family: inherit;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+.photo-overlay-close:hover {
+  opacity: 0.7;
+}
+
+.photo-overlay-close:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
 }
 
 /* =========================================
@@ -266,6 +534,10 @@
   }
 
   .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collection-photo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -287,6 +559,19 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
+  .collection-modal {
+    padding: 2rem;
+  }
+
+  .photo-overlay {
+    padding: 1rem;
+  }
+
+  .photo-overlay-image {
+    max-width: 94vw;
+    max-height: 88vh;
+  }
 }
 
 @media (max-width: 600px) {
@@ -304,7 +589,34 @@
     grid-template-columns: 1fr;
   }
 
+  .collection-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-modal {
+    max-height: 95vh;
+    padding: 1.5rem;
+  }
+
+  .collection-modal-header {
+    padding-right: 2.5rem;
+  }
+
+  .photography-overlay {
+    padding: 1rem;
+  }
+
   .photography-section {
     margin-bottom: 4rem;
+  }
+
+  .story-navigation {
+    width: 38px;
+    height: 38px;
+  }
+
+  .photo-overlay-close {
+    top: 0.75rem;
+    right: 1rem;
   }
 }
