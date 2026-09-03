@@ -52,6 +52,93 @@
 }
 
 /* =========================================================
+   DEVELOPED TABS
+========================================================= */
+
+.developed-tabs {
+  width: 100%;
+  max-width: 1000px;
+  margin: 32px auto 0;
+}
+
+.developed-tab-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.developed-tab {
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.developed-tab:hover {
+  color: var(--text);
+}
+
+.developed-tab.active {
+  color: #1d4ed8;
+  border-bottom-color: #1d4ed8;
+}
+
+.developed-grid {
+  margin-top: 28px;
+}
+
+/* =========================================================
+   RESOURCE TABS
+   Matches Developed tabs
+========================================================= */
+
+.resource-tabs {
+  width: 100%;
+  max-width: 1000px;
+  margin: 32px auto 28px;
+}
+
+.resource-tab-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.resource-tab {
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.resource-tab:hover {
+  color: var(--text);
+}
+
+.resource-tab.active {
+  color: #1d4ed8;
+  border-bottom-color: #1d4ed8;
+}
+
+/* =========================================================
    LEARNING CARDS
 ========================================================= */
 
@@ -90,10 +177,6 @@
   outline-offset: 4px;
 }
 
-/* =========================================================
-   DEFAULT CARD STATE
-========================================================= */
-
 .learning-card-default {
   position: absolute;
   inset: 0;
@@ -110,10 +193,6 @@
   transform: translateY(-15px);
 }
 
-/* =========================================================
-   CARD NUMBER
-========================================================= */
-
 .learning-card-number {
   margin-bottom: 1.5rem;
   color: #888;
@@ -121,10 +200,6 @@
   font-weight: 700;
   letter-spacing: 0.1em;
 }
-
-/* =========================================================
-   CARD CONTENT
-========================================================= */
 
 .learning-card-content {
   margin-top: auto;
@@ -148,10 +223,6 @@
   margin: 0;
   line-height: 1.7;
 }
-
-/* =========================================================
-   HOVER CARD STATE
-========================================================= */
 
 .learning-card-hover {
   position: absolute;
@@ -246,72 +317,6 @@
 }
 
 /* =========================================================
-   LEARNING THROUGH PROJECTS
-========================================================= */
-
-.learning-timeline {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.learning-timeline::before {
-  content: "";
-  position: absolute;
-  top: 24px;
-  bottom: 24px;
-  left: 24px;
-  width: 1px;
-  background: #ddd;
-}
-
-.timeline-item {
-  position: relative;
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 1.5rem;
-}
-
-.timeline-marker {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  background: #fff;
-  color: #777;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.timeline-content {
-  padding-top: 0.25rem;
-}
-
-.timeline-category {
-  color: #777;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.timeline-content h3 {
-  margin: 0.4rem 0 0.75rem;
-  font-size: 1.35rem;
-}
-
-.timeline-content p {
-  margin: 0;
-  line-height: 1.7;
-}
-
-/* =========================================================
    RESOURCES
 ========================================================= */
 
@@ -322,7 +327,9 @@
 }
 
 .resource-card {
+  position: relative;
   display: block;
+  overflow: hidden;
   padding: 1.75rem;
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -339,6 +346,12 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
+.resource-card-content {
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
 .resource-type {
   display: block;
   margin-bottom: 0.75rem;
@@ -346,6 +359,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .resource-card h3 {
@@ -356,6 +370,33 @@
 .resource-card p {
   margin: 0;
   line-height: 1.5;
+}
+
+/* =========================================================
+   RESOURCE LINK HOVER
+   Matches Certifications link overlay
+========================================================= */
+
+.resource-link-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.resource-card-linked:hover .resource-link-overlay {
+  opacity: 1;
+}
+
+.resource-card-linked:hover .resource-card-content {
+  opacity: 0;
 }
 
 /* =========================================================
@@ -415,8 +456,9 @@
   animation: learningModalIn 0.25s ease;
 }
 
-/* Learning Modal Close Button
-   Matches the Awards certificate close button */
+/* =========================================================
+   LEARNING MODAL CLOSE BUTTON
+========================================================= */
 
 .learning-modal-close {
   position: absolute;
@@ -432,49 +474,6 @@
 }
 
 .learning-modal-close:hover {
-  opacity: 0.7;
-}
-
-/* Enlarged Photo Overlay */
-
-.photo-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-}
-
-.photo-lightbox-expanded {
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  cursor: default;
-}
-
-.photo-lightbox-close {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  border: none;
-  background: none;
-  color: white;
-  font-size: 2.5rem;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 2001;
-}
-
-.photo-lightbox-close:hover {
   opacity: 0.7;
 }
 
@@ -726,7 +725,6 @@
 
 /* =========================================================
    ENLARGED PHOTO OVERLAY
-   Matches Awards certificate overlay
 ========================================================= */
 
 .photo-lightbox {
@@ -744,7 +742,6 @@
 
 /* =========================================================
    ENLARGED PHOTO
-   Matches Awards certificate sizing
 ========================================================= */
 
 .photo-lightbox-expanded {
@@ -760,7 +757,6 @@
 
 /* =========================================================
    PHOTO CLOSE BUTTON
-   Matches Awards certificate close button
 ========================================================= */
 
 .photo-lightbox-close {
@@ -857,6 +853,33 @@
     min-height: 280px;
   }
 
+  /* Developed tabs */
+
+  .developed-tabs {
+    margin-top: 24px;
+  }
+
+  .developed-tab {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .developed-grid {
+    margin-top: 24px;
+  }
+
+  /* Resource tabs */
+
+  .resource-tabs {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .resource-tab {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
   .learning-overlay {
     padding: 1rem;
   }
@@ -889,7 +912,6 @@
     height: 40px;
   }
 
-  /* Awards-style photo overlay on mobile */
   .photo-lightbox {
     padding: 2rem;
   }

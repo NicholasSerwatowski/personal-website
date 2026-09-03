@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import "../../styles/interests/learning.css";
 
-import { learningPage } from "../../data/interests/learning";
+import {
+  learningPage,
+  developedCategories,
+} from "../../data/interests/learning";
 
 type LearningImage = {
   src: string;
@@ -18,6 +21,7 @@ type LearningMilestone = {
 
 type LearningTopic = {
   id: string;
+  icon?: string;
   title: string;
   category: string;
   description: string;
@@ -31,6 +35,12 @@ const Learning: React.FC = () => {
 
   const [selectedImage, setSelectedImage] =
     useState<LearningImage | null>(null);
+
+  const [activeDevelopedCategory, setActiveDevelopedCategory] =
+    useState(0);
+
+  const [activeResourceCategory, setActiveResourceCategory] =
+    useState(0);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -87,6 +97,12 @@ const Learning: React.FC = () => {
           </div>
 
           <div className="learning-card-content">
+            {topic.icon && (
+              <div className="interest-icon">
+                {topic.icon}
+              </div>
+            )}
+
             <span className="learning-category">
               {topic.category}
             </span>
@@ -110,19 +126,37 @@ const Learning: React.FC = () => {
     );
   };
 
+  const currentDevelopedCategory =
+    developedCategories[activeDevelopedCategory];
+
+  const developedTopics =
+    currentDevelopedCategory?.topics ?? [];
+
+  const currentResourceCategory =
+    learningPage.resources.categories[activeResourceCategory];
+
+  const resourceItems =
+    currentResourceCategory?.items ?? [];
+
   return (
     <div className="learning-page">
       <header className="learning-header">
         <h1>{learningPage.title}</h1>
+
         <p>{learningPage.description}</p>
       </header>
 
       <main className="learning-content">
+        {/* =====================================================
+            CURRENTLY LEARNING
+        ===================================================== */}
+
         <section className="learning-section">
           <div className="section-heading">
             <h2>
               {learningPage.currentlyLearning.title}
             </h2>
+
             <p>
               {learningPage.currentlyLearning.description}
             </p>
@@ -135,24 +169,53 @@ const Learning: React.FC = () => {
           </div>
         </section>
 
+        {/* =====================================================
+            DEVELOPED
+        ===================================================== */}
+
         <section className="learning-section">
           <div className="section-heading">
             <h2>{learningPage.developed.title}</h2>
+
             <p>{learningPage.developed.description}</p>
           </div>
 
-          <div className="learning-grid">
-            {learningPage.developed.topics.map(
-              renderLearningCard
-            )}
+          <div className="developed-tabs">
+            <div className="developed-tab-list">
+              {developedCategories.map((category, index) => (
+                <button
+                  key={category.name}
+                  className={`developed-tab ${
+                    index === activeDevelopedCategory
+                      ? "active"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    setActiveDevelopedCategory(index)
+                  }
+                  type="button"
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="learning-grid developed-grid">
+            {developedTopics.map(renderLearningCard)}
           </div>
         </section>
+
+        {/* =====================================================
+            AREAS OF INTEREST
+        ===================================================== */}
 
         <section className="learning-section">
           <div className="section-heading">
             <h2>
               {learningPage.areasOfInterest.title}
             </h2>
+
             <p>
               {learningPage.areasOfInterest.description}
             </p>
@@ -168,7 +231,9 @@ const Learning: React.FC = () => {
                   <div className="interest-icon">
                     {area.icon}
                   </div>
+
                   <h3>{area.title}</h3>
+
                   <p>{area.description}</p>
                 </article>
               )
@@ -176,80 +241,104 @@ const Learning: React.FC = () => {
           </div>
         </section>
 
-        <section className="learning-section">
-          <div className="section-heading">
-            <h2>
-              {learningPage.learningThroughProjects.title}
-            </h2>
-            <p>
-              {learningPage.learningThroughProjects.description}
-            </p>
-          </div>
-
-          <div className="learning-timeline">
-            {learningPage.learningThroughProjects.projects.map(
-              (project, index) => (
-                <article
-                  className="timeline-item"
-                  key={index}
-                >
-                  <div className="timeline-marker">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-
-                  <div className="timeline-content">
-                    <span className="timeline-category">
-                      {project.category}
-                    </span>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                  </div>
-                </article>
-              )
-            )}
-          </div>
-        </section>
+        {/* =====================================================
+            RESOURCES
+        ===================================================== */}
 
         <section className="learning-section">
           <div className="section-heading">
             <h2>{learningPage.resources.title}</h2>
+
             <p>{learningPage.resources.description}</p>
           </div>
 
+          <div className="resource-tabs">
+            <div className="resource-tab-list">
+              {learningPage.resources.categories.map(
+                (category, index) => (
+                  <button
+                    key={category.name}
+                    className={`resource-tab ${
+                      index === activeResourceCategory
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      setActiveResourceCategory(index)
+                    }
+                    type="button"
+                  >
+                    {category.name}
+                  </button>
+                )
+              )}
+            </div>
+          </div>
+
           <div className="resource-grid">
-            {learningPage.resources.items.map(
-              (resource, index) => (
+            {resourceItems.map((resource, index) => {
+              const hasLink =
+                resource.link &&
+                resource.link !== "#";
+
+              return (
                 <a
                   href={resource.link}
-                  className="resource-card"
+                  className={`resource-card ${
+                    hasLink
+                      ? "resource-card-linked"
+                      : ""
+                  }`}
                   key={index}
                   target={
-                    resource.link !== "#"
-                      ? "_blank"
-                      : undefined
+                    hasLink ? "_blank" : undefined
                   }
                   rel={
-                    resource.link !== "#"
-                      ? "noreferrer"
+                    hasLink
+                      ? "noopener noreferrer"
                       : undefined
                   }
+                  onClick={(event) => {
+                    if (!hasLink) {
+                      event.preventDefault();
+                    }
+                  }}
                 >
-                  <span className="resource-type">
-                    {resource.type}
-                  </span>
-                  <h3>{resource.title}</h3>
-                  <p>{resource.creator}</p>
+                  <div className="resource-card-content">
+                    <span className="resource-type">
+                      {resource.type}
+                    </span>
+
+                    <h3>{resource.title}</h3>
+
+                    <p>{resource.creator}</p>
+                  </div>
+
+                  {hasLink && (
+                    <span className="resource-link-overlay">
+                      View Resource ↗
+                    </span>
+                  )}
                 </a>
-              )
-            )}
+              );
+            })}
           </div>
         </section>
 
+        {/* =====================================================
+            LEARNING PHILOSOPHY
+        ===================================================== */}
+
         <section className="learning-philosophy">
           <h2>{learningPage.philosophy.title}</h2>
+
           <p>{learningPage.philosophy.description}</p>
         </section>
       </main>
+
+      {/* =======================================================
+          LEARNING MODAL
+      ======================================================= */}
 
       {selectedTopic && (
         <div
@@ -336,7 +425,10 @@ const Learning: React.FC = () => {
                                 (image) => image.src
                               )
                               .map(
-                                (image, imageIndex) => (
+                                (
+                                  image,
+                                  imageIndex
+                                ) => (
                                   <button
                                     className="milestone-photo-button"
                                     key={imageIndex}
@@ -374,6 +466,10 @@ const Learning: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* =======================================================
+          PHOTO LIGHTBOX
+      ======================================================= */}
 
       {selectedImage && (
         <div
