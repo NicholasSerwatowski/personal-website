@@ -1,9 +1,9 @@
-/* =========================================
-   ABOUT PAGE
-   ========================================= */
+/* =========================
+   About Page
+   ========================= */
 
 .about-page {
-  max-width: 1200px;
+  width: 100%;
 }
 
 /* =========================================
@@ -95,22 +95,27 @@
   font-size: 0.9rem;
 }
 
-/* =========================================
-   GENERAL SECTIONS
-   ========================================= */
+/* =========================
+   General Sections
+   ========================= */
 
 .about-section {
-  margin-bottom: 80px;
+  margin-top: 6rem;
 }
 
 .about-section-heading {
-  margin-bottom: 28px;
+  margin-bottom: 2rem;
+}
+
+.about-section-heading .about-eyebrow {
+  margin-bottom: 0.75rem;
 }
 
 .about-section-heading h2 {
   margin: 0;
-
-  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  color: #10152b;
+  font-size: 2rem;
+  line-height: 1.2;
 }
 
 /* =========================================
@@ -235,8 +240,79 @@
 }
 
 /* =========================================
-   MORE ABOUT ME
+   CURRENTLY
    ========================================= */
+
+.about-current-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.about-current-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  min-height: 120px;
+  padding: 20px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.about-current-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.about-current-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+  background: #eff6ff;
+
+  font-size: 1.4rem;
+}
+
+.about-current-label {
+  display: block;
+  margin-bottom: 4px;
+
+  color: #1d4ed8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.about-current-card h3 {
+  margin: 0 0 4px;
+}
+
+.about-current-card p {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* =========================
+   More About Me
+   ========================= */
 
 .about-more-grid {
   display: grid;
@@ -259,10 +335,37 @@
 
   padding: 24px;
 
-  background: #eff6ff;
-  border: 1px solid #dbeafe;
+  border: 1px solid #d9e2ff;
   border-radius: 18px;
+
+  background-color: #f2f5ff;
+
+  /* IMPORTANT:
+     The entire card is clickable, but none of
+     the text gets browser-default link styling. */
+  color: inherit;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
+
+.about-more-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background-color: #eef2ff;
+}
+
+.about-more-card:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.3);
+  outline-offset: 3px;
+}
+
+/* Keep the original visual hierarchy */
 
 .about-more-card span {
   color: #1d4ed8;
@@ -275,91 +378,108 @@
   line-height: 1.6;
 }
 
-/* =========================================
-   TIMELINE
-   ========================================= */
+/* Explicitly prevent browser link underlines */
+
+.about-more-card,
+.about-more-card:hover,
+.about-more-card:visited,
+.about-more-card:active {
+  text-decoration: none;
+}
+
+.about-more-card span,
+.about-more-card strong {
+  text-decoration: none;
+}
+
+/* =========================
+   My Path / Timeline
+   ========================= */
+
+.about-path {
+  margin-bottom: 4rem;
+}
 
 .about-timeline {
   position: relative;
-
   display: flex;
   flex-direction: column;
 }
 
+/* Vertical timeline line */
 .about-timeline::before {
   content: "";
-
   position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 74px;
-
-  width: 1px;
-
-  background: var(--border);
+  top: 0;
+  bottom: 0;
+  left: 160px;
+  width: 2px;
+  background: #d9d9d9;
 }
 
+/* Individual Timeline Item */
 .about-timeline-item {
   position: relative;
-
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 30px;
-
-  padding: 0 0 35px;
+  grid-template-columns: 140px 40px 1fr;
+  column-gap: 0;
+  min-height: 110px;
 }
 
-.about-timeline-item:last-child {
-  padding-bottom: 0;
-}
-
-.about-timeline-year {
-  position: relative;
-
-  color: #1d4ed8;
-  font-weight: 700;
-}
-
-.about-timeline-year::after {
+/* Blue outlined timeline dot */
+.about-timeline-item::before {
   content: "";
-
   position: absolute;
-  top: 4px;
-  right: 14px;
-
-  width: 10px;
-  height: 10px;
-
-  border: 3px solid white;
+  top: 8px;
+  left: 150px;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 3px solid #ffffff;
   border-radius: 50%;
-  background: #1d4ed8;
+  background: #4f46e5;
+  box-shadow: 0 0 0 2px #dbe4ff;
+  transform: translateX(0);
+  z-index: 2;
+}
 
-  box-shadow: 0 0 0 1px #dbeafe;
+/* Year */
+.about-timeline-year {
+  grid-column: 1;
+  padding-top: 2px;
+  color: #4f46e5;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Timeline Content */
+.about-timeline-item > div {
+  grid-column: 3;
+  padding: 0 0 2.5rem;
 }
 
 .about-timeline-item h3 {
-  margin: 0 0 6px;
+  margin: 0 0 0.65rem;
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: #0f172a;
 }
 
 .about-timeline-item p {
   margin: 0;
-
-  color: var(--muted);
+  font-size: 1rem;
   line-height: 1.6;
+  color: #334e73;
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+/* =========================
+   Mobile
+   ========================= */
 
 @media (max-width: 900px) {
   .about-intro {
     grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .about-photo-card {
-    max-width: 400px;
   }
 
   .about-focus-grid {
@@ -371,30 +491,39 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .about-intro h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-intro h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-intro-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
   .about-focus-grid,
   .about-current-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-intro {
-    margin-bottom: 60px;
-  }
-
   .about-section {
-    margin-bottom: 60px;
-  }
-
-  .about-timeline::before {
-    left: 59px;
+    margin-top: 4rem;
   }
 
   .about-timeline-item {
-    grid-template-columns: 85px 1fr;
-    gap: 20px;
+    grid-template-columns: 80px 1fr;
+    gap: 1.25rem;
   }
 
-  .about-timeline-year::after {
-    right: 7px;
+  .about-timeline-item:not(:last-child)::after {
+    left: 78px;
+  }
+
+  .about-timeline-item > div::before {
+    left: -1.75rem;
   }
 }

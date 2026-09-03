@@ -1,3 +1,7 @@
+import DonQuixote from "../../assets/interests/books/DonQuixote.png";
+import HarryPotter5 from "../../assets/interests/books/HarryPotter5.jpg";
+import HungerGames1 from "../../assets/interests/books/HungerGames1.jpg";
+
 export const booksPage = {
   title: "Books",
 
@@ -6,52 +10,38 @@ export const booksPage = {
 
   currentlyReading: [
     {
-      title: "Book Title",
-      author: "Author Name",
+      title: "Don Quixote",
+      author: "Miguel de Cervantes",
       description:
-        "A short explanation of why I'm currently reading this book and what I'm hoping to learn from it.",
-      cover: null,
+        "",
+      cover: DonQuixote,
     },
   ],
 
   favoriteBooks: [
     {
-      title: "Book Title",
-      author: "Author Name",
+      title: "Harry Potter and the Order of the Phoenix",
+      author: "J.K. Rowling",
       description:
-        "A short personal explanation of why this is one of my favorite books.",
-      cover: null,
+        "",
+      cover: HarryPotter5,
     },
     {
-      title: "Book Title",
-      author: "Author Name",
+      title: "The Hunger Games",
+      author: "Suzanne Collins",
       description:
-        "A short personal explanation of why this is one of my favorite books.",
-      cover: null,
-    },
-    {
-      title: "Book Title",
-      author: "Author Name",
-      description:
-        "A short personal explanation of why this is one of my favorite books.",
-      cover: null,
+        "",
+      cover: HungerGames1,
     },
   ],
 
   recentlyRead: [
     {
-      title: "Book Title",
-      author: "Author Name",
-      genre: "Genre",
+      title: "The Library of Bable",
+      author: "Jorge Luis Borges",
+      genre: "",
       rating: "★★★★★",
       finished: "August 2026",
-    },
-    {
-      title: "Book Title",
-      author: "Author Name",
-      genre: "Genre",
-      rating: "★★★★☆",
-      finished: "July 2026",
     },
   ],
 
@@ -67,10 +57,14 @@ export const booksPage = {
 
   influentialBooks: [
     {
-      title: "Book Title",
-      author: "Author Name",
+      title: "Mockingjay",
+      author: "Suzanne Collins",
       reflection:
-        "A short reflection on how this book influenced the way I think, approach problems, understand the world, or look at a particular subject.",
+        `This book has shown me that anyone is capable of having a significant
+        and positive impact on the entire world, regardless of background.
+        I take that to heart with learning new skills and exposing myself to
+        different perspectives that are intially out of my comfort zone, but
+        eventually, turn me into a better version of myself.`,
     },
   ],
 };

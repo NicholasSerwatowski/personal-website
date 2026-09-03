@@ -1,0 +1,303 @@
+/* =========================
+   Volunteering
+   ========================= */
+
+.volunteering-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* =========================
+   Volunteering Card
+   ========================= */
+
+.volunteering-card {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   Organization Image
+   ========================= */
+
+.volunteering-image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   Volunteering Information
+   ========================= */
+
+.volunteering-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.volunteering-content h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.5rem;
+}
+
+.volunteering-content h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.volunteering-dates {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.volunteering-content > p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================
+   Responsibilities
+   ========================= */
+
+.volunteering-responsibilities {
+  margin-top: 1.5rem;
+}
+
+.volunteering-responsibilities h4,
+.volunteering-skills h4,
+.volunteering-impact h4,
+.volunteering-links h4,
+.volunteering-gallery h4 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.volunteering-responsibilities ul,
+.volunteering-impact ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.volunteering-responsibilities li,
+.volunteering-impact li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   Skills
+   ========================= */
+
+.volunteering-skills {
+  margin-top: 1.5rem;
+}
+
+.volunteering-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.volunteering-skill-tag {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background-color: #e5e5e5;
+  font-size: 0.85rem;
+}
+
+/* =========================
+   Impact
+   ========================= */
+
+.volunteering-impact {
+  margin-top: 1.5rem;
+}
+
+/* =========================
+   Photo Gallery
+   ========================= */
+
+.volunteering-gallery {
+  margin-top: 1.5rem;
+}
+
+.volunteering-gallery-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0.25rem 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.volunteering-gallery-item {
+  flex: 0 0 auto;
+  width: 240px;
+  text-align: center;
+}
+
+/* =========================
+   Gallery Photo Button
+   ========================= */
+
+.volunteering-gallery-button {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.volunteering-gallery-image {
+  display: block;
+  width: 240px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.volunteering-gallery-button:hover .volunteering-gallery-image {
+  transform: scale(1.03);
+}
+
+/* =========================
+   Gallery Description
+   ========================= */
+
+.volunteering-gallery-description {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* =========================
+   Photo Overlay
+   ========================= */
+
+.volunteering-photo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+/* =========================
+   Enlarged Photo
+   ========================= */
+
+.volunteering-photo-expanded {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  cursor: default;
+}
+
+/* =========================
+   Close Button
+   ========================= */
+
+.volunteering-photo-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.volunteering-photo-close:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   Links
+   ========================= */
+
+.volunteering-links {
+  margin-top: 1.5rem;
+}
+
+.volunteering-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.volunteering-link {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background-color: #e5e5e5;
+  font-size: 0.85rem;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.volunteering-link:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   Mobile Layout
+   ========================= */
+
+@media (max-width: 768px) {
+  .volunteering-card {
+    flex-direction: column;
+  }
+
+  .volunteering-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .volunteering-gallery-list {
+    gap: 1rem;
+  }
+
+  .volunteering-gallery-item {
+    width: 200px;
+  }
+
+  .volunteering-gallery-image {
+    width: 200px;
+    height: 140px;
+  }
+}

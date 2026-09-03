@@ -21,6 +21,7 @@ import Experience from "./pages/Experience";
   import Research from "./pages/experience/Research";
   import Awards from "./pages/experience/Awards";
   import Certifications from "./pages/experience/Certifications";
+  import Volunteering from "./pages/experience/Volunteering";
 import Interests from "./pages/Interests";
   import Music from "./pages/interests/Music";
   import Photography from "./pages/interests/Photography";
@@ -42,6 +43,7 @@ import "./styles/experience.css";
   import "./styles/experience/certifications.css";
   import "./styles/experience/education.css";
   import "./styles/experience/research.css";
+  import "./styles/experience/volunteering.css";
   import "./styles/experience/work.css";
 import "./styles/interests.css";
   import "./styles/interests/books.css";
@@ -89,6 +91,7 @@ function App() {
           <Route path="/personal-website/experience/research" element={<Research />} />
           <Route path="/personal-website/experience/awards" element={<Awards />} />
           <Route path="/personal-website/experience/certifications" element={<Certifications />} />
+          <Route path="/personal-website/experience/volunteering" element={<Volunteering />} />
 
         {/* This is the interests page */}
         <Route path="/personal-website/interests" element={<Interests />} />
